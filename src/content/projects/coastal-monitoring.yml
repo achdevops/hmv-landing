@@ -1,0 +1,25 @@
+projectId: project-001
+slugs:
+  es: monitoreo-costero-ia-drones
+  en: ai-drone-coastal-monitoring
+visibility: public
+stage: research
+featured: true
+order: 10
+title:
+  es: Monitoreo de costas con IA y drones
+  en: AI and drone coastal monitoring
+summary:
+  es: Investigamos cómo la captura aérea, Cloud y visión computacional pueden apoyar una observación más consistente y responsable de playas turísticas.
+  en: We explore how aerial capture, Cloud and computer vision could support more consistent, responsible observation of tourist beaches.
+tags: [IA, Cloud, Costa]
+capabilities: [ai-data, cloud, iot]
+impactThemes: [environmental, operational, public-interest]
+heroImage: /images/projects/coast/project-coast-hero.webp
+heroAlt:
+  es: Visual conceptual de observación costera mediante captura aérea y análisis de datos.
+  en: Conceptual visual of coastal observation using aerial capture and data analysis.
+updatedAt: 2026-08-17
+contactInterest: pilot
+needs: [pilot-site, data, research, cloud-credits, equipment, funding, mentorship]
+noindex: false

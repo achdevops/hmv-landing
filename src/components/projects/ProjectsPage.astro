@@ -1,0 +1,79 @@
+---
+import { getCollection } from 'astro:content';
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ProjectCard from './ProjectCard.astro';
+import { route, type Locale } from '@/i18n/routes';
+const { locale } = Astro.props as { locale: Locale };
+const projects = (await getCollection('projects'))
+  .filter((p) => p.data.visibility !== 'private')
+  .sort((a, b) => a.data.order - b.data.order);
+const title =
+  locale === 'es'
+    ? 'Proyectos y experimentos | Hola Mundo Verde'
+    : 'Projects and experiments | Hola Mundo Verde';
+const description =
+  locale === 'es'
+    ? 'Mostramos cada iniciativa en su etapa real para que sea más fácil entender dónde colaborar.'
+    : 'We show every initiative at its actual stage so it is easier to understand where collaboration can help.';
+---
+
+<BaseLayout
+  {locale}
+  {title}
+  {description}
+  routeKey="projects"
+  alternate={route('projects', locale === 'es' ? 'en' : 'es')}
+>
+  <header class="page-hero">
+    <div class="container">
+      <p class="eyebrow">Portfolio · Research → MVP</p><h1>
+        {locale === 'es' ? 'Proyectos y experimentos' : 'Projects and experiments'}
+      </h1><p class="lead">{description}</p>
+    </div>
+  </header>
+  <section class="section">
+    <div class="container project-grid">
+      {projects.map((project) => <ProjectCard {project} {locale} />)}
+    </div>
+  </section>
+  <section class="legend">
+    <div class="container">
+      <h2>{locale === 'es' ? 'Etapas visibles' : 'Visible stages'}</h2><p>
+        {
+          locale === 'es'
+            ? 'Idea → Investigación → Prototipo → Piloto → MVP. La etapa describe evidencia, no ambición.'
+            : 'Idea → Research → Prototype → Pilot → MVP. Stage describes evidence, not ambition.'
+        }
+      </p>
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .page-hero {
+    padding-block: clamp(4rem, 10vw, 8rem);
+    color: var(--white);
+    background: var(--forest-900);
+  }
+  .page-hero .lead {
+    color: rgb(255 255 255 / 75%);
+  }
+  .project-grid {
+    display: grid;
+    gap: 1.5rem;
+  }
+  .legend {
+    padding-block: 4rem;
+    background: var(--sand-200);
+  }
+  .legend h2 {
+    font-size: 1.7rem;
+  }
+  .legend p {
+    margin-top: 1rem;
+  }
+  @media (min-width: 48rem) {
+    .project-grid {
+      grid-template-columns: 1.6fr 1fr;
+    }
+  }
+</style>

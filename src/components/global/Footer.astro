@@ -1,0 +1,64 @@
+---
+import { route, type Locale } from '@/i18n/routes';
+interface Props {
+  locale: Locale;
+}
+const { locale } = Astro.props;
+---
+
+<footer>
+  <div class="container footer-grid">
+    <div>
+      <p class="footer-brand">Hola Mundo Verde</p><p>
+        GreenTech Innovation Lab · Maldonado, Uruguay
+      </p>
+    </div>
+    <p>
+      {
+        locale === 'es'
+          ? 'Exploramos ideas, construimos prototipos y aprendemos en colaboración.'
+          : 'We explore ideas, build prototypes and learn through collaboration.'
+      }
+    </p>
+    <nav aria-label={locale === 'es' ? 'Pie de página' : 'Footer'}>
+      <a href={route('privacy', locale)}>{locale === 'es' ? 'Privacidad' : 'Privacy'}</a>
+      <a href={route('contact', locale)}>{locale === 'es' ? 'Contacto' : 'Contact'}</a>
+      <a
+        href={route('home', locale === 'es' ? 'en' : 'es')}
+        hreflang={locale === 'es' ? 'en' : 'es'}>{locale === 'es' ? 'English' : 'Español'}</a
+      >
+    </nav>
+  </div>
+</footer>
+<style>
+  footer {
+    padding-block: 4rem;
+    color: var(--white);
+    background: var(--forest-900);
+  }
+  .footer-grid {
+    display: grid;
+    gap: 2.5rem;
+  }
+  .footer-brand {
+    margin-bottom: 0.3rem;
+    font: 700 1.2rem var(--font-display);
+  }
+  footer p {
+    color: rgb(255 255 255 / 78%);
+  }
+  nav {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 1.25rem;
+  }
+  a {
+    color: var(--lime-300);
+  }
+  @media (min-width: 48rem) {
+    .footer-grid {
+      grid-template-columns: 1fr 1fr auto;
+      align-items: start;
+    }
+  }
+</style>

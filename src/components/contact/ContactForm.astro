@@ -1,0 +1,341 @@
+---
+import type { Locale } from '@/i18n/routes';
+const { locale } = Astro.props as { locale: Locale };
+const endpoint = import.meta.env.PUBLIC_CONTACT_API_URL ?? '';
+const sitekey = import.meta.env.PUBLIC_TURNSTILE_SITE_KEY ?? '';
+const isConfigured = Boolean(endpoint && sitekey);
+const labels =
+  locale === 'es'
+    ? {
+        name: 'Nombre',
+        email: 'Email',
+        organization: 'Organización',
+        interest: 'Interés',
+        stage: 'Etapa del desafío',
+        message: 'Mensaje',
+        consent:
+          'Acepto que Hola Mundo Verde use estos datos para responder, de acuerdo con la política de privacidad.',
+        submit: 'Enviar mensaje',
+        sending: 'Enviando…',
+        required: 'Obligatorio',
+        summary: 'Revisa los campos indicados.',
+        success: 'Gracias. Recibimos tu mensaje.',
+        error: 'No pudimos enviar tu mensaje. Inténtalo nuevamente o escríbenos por email.',
+        local:
+          'Modo local seguro: el envío real está deshabilitado hasta completar la configuración de producción.',
+      }
+    : {
+        name: 'Name',
+        email: 'Email',
+        organization: 'Organization',
+        interest: 'Interest',
+        stage: 'Challenge stage',
+        message: 'Message',
+        consent:
+          'I agree that Hola Mundo Verde may use this data to respond, according to the privacy notice.',
+        submit: 'Send message',
+        sending: 'Sending…',
+        required: 'Required',
+        summary: 'Review the indicated fields.',
+        success: 'Thank you. We received your message.',
+        error: 'We could not send your message. Try again or email us.',
+        local:
+          'Safe local mode: real delivery is disabled until production configuration is complete.',
+      };
+const interests =
+  locale === 'es'
+    ? [
+        ['', 'Seleccionar'],
+        ['pilot', 'Piloto o proyecto'],
+        ['technical-collaboration', 'Colaboración técnica'],
+        ['research', 'Investigación'],
+        ['workshop', 'Taller o capacitación'],
+        ['funding-program', 'Financiación o programa'],
+        ['community-press', 'Prensa o comunidad'],
+        ['other', 'Otro'],
+      ]
+    : [
+        ['', 'Select'],
+        ['pilot', 'Pilot or project'],
+        ['technical-collaboration', 'Technical collaboration'],
+        ['research', 'Research'],
+        ['workshop', 'Workshop or training'],
+        ['funding-program', 'Funding or program'],
+        ['community-press', 'Community or press'],
+        ['other', 'Other'],
+      ];
+const stages =
+  locale === 'es'
+    ? [
+        ['', 'No aplica / sin definir'],
+        ['idea', 'Idea'],
+        ['discovery', 'Descubrimiento'],
+        ['prototype', 'Prototipo'],
+        ['operating', 'En operación'],
+      ]
+    : [
+        ['', 'Not applicable / undefined'],
+        ['idea', 'Idea'],
+        ['discovery', 'Discovery'],
+        ['prototype', 'Prototype'],
+        ['operating', 'Operating'],
+      ];
+---
+
+<form
+  id="contact-form"
+  action={endpoint || undefined}
+  method="post"
+  data-endpoint={endpoint}
+  data-locale={locale}
+  data-configured={String(isConfigured)}
+  novalidate
+>
+  {
+    !isConfigured && (
+      <p class="mode" role="note">
+        {labels.local}
+      </p>
+    )
+  }
+  <div id="error-summary" class="error-summary" tabindex="-1" hidden>
+    <strong>{labels.summary}</strong><ul></ul>
+  </div>
+  <div class="form-grid">
+    <label
+      >{labels.name}
+      <span>{labels.required}</span><input
+        name="name"
+        autocomplete="name"
+        required
+        minlength="2"
+        maxlength="80"
+      /></label
+    >
+    <label
+      >{labels.email}
+      <span>{labels.required}</span><input
+        type="email"
+        name="email"
+        autocomplete="email"
+        required
+        maxlength="254"
+      /></label
+    >
+  </div>
+  <label
+    >{labels.organization}<input
+      name="organization"
+      autocomplete="organization"
+      maxlength="120"
+    /></label
+  >
+  <div class="form-grid">
+    <label
+      >{labels.interest}
+      <span>{labels.required}</span><select name="interest" required
+        >{interests.map(([value, text]) => <option value={value}>{text}</option>)}</select
+      ></label
+    >
+    <label
+      >{labels.stage}<select name="stage"
+        >{stages.map(([value, text]) => <option value={value}>{text}</option>)}</select
+      ></label
+    >
+  </div>
+  <label
+    >{labels.message}
+    <span>{labels.required}</span><textarea
+      name="message"
+      required
+      minlength="30"
+      maxlength="3000"
+      rows="7"></textarea><small>30–3000</small></label
+  >
+  <label class="honeypot" aria-hidden="true"
+    >Website<input name="website" tabindex="-1" autocomplete="off" /></label
+  >
+  <label class="check"
+    ><input type="checkbox" name="consent" required /><span>{labels.consent}</span></label
+  >
+  {
+    sitekey && (
+      <>
+        <>
+          <div
+            class="cf-turnstile"
+            data-sitekey={sitekey}
+            data-action="contact"
+            data-response-field-name="turnstileToken"
+          />
+          <script
+            is:inline
+            src="https://challenges.cloudflare.com/turnstile/v0/api.js"
+            async
+            defer
+          />
+        </>
+      </>
+    )
+  }
+  <input type="hidden" name="locale" value={locale} /><input
+    type="hidden"
+    name="sourcePath"
+    value={Astro.url.pathname}
+  />
+  <button type="submit">{labels.submit}</button><p
+    id="form-status"
+    class="status"
+    aria-live="polite"
+  >
+  </p>
+</form>
+<script is:inline define:vars={{ labels }}>
+  const form = document.querySelector('#contact-form');
+  const status = document.querySelector('#form-status');
+  const summary = document.querySelector('#error-summary');
+  const query = new URLSearchParams(location.search);
+  const requested = query.get('interest');
+  const allowed = [
+    'pilot',
+    'technical-collaboration',
+    'research',
+    'workshop',
+    'funding-program',
+    'community-press',
+    'other',
+  ];
+  if (requested && allowed.includes(requested)) {
+    const select = form?.querySelector('[name=interest]');
+    if (select instanceof HTMLSelectElement) select.value = requested;
+  }
+  form?.addEventListener('submit', async (event) => {
+    event.preventDefault();
+    summary.hidden = true;
+    summary.querySelector('ul').innerHTML = '';
+    if (!form.checkValidity()) {
+      const invalid = [...form.querySelectorAll(':invalid')];
+      invalid.forEach((field) => {
+        const li = document.createElement('li');
+        li.textContent = field.closest('label')?.childNodes[0]?.textContent?.trim() || field.name;
+        summary.querySelector('ul').append(li);
+      });
+      summary.hidden = false;
+      summary.focus();
+      form.reportValidity();
+      return;
+    }
+    if (form.dataset.configured !== 'true') {
+      status.textContent = labels.local;
+      return;
+    }
+    const button = form.querySelector('button[type=submit]');
+    button.disabled = true;
+    button.textContent = labels.sending;
+    status.textContent = labels.sending;
+    try {
+      const data = Object.fromEntries(new FormData(form));
+      data.consent = data.consent === 'on';
+      const response = await fetch(form.dataset.endpoint, {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(data),
+      });
+      const payload = await response.json();
+      if (!response.ok || !payload.ok) throw new Error(payload.code);
+      status.textContent = `${labels.success} ${payload.referenceId}`;
+      form.reset();
+      window.turnstile?.reset();
+    } catch {
+      status.textContent = labels.error;
+      window.turnstile?.reset();
+    } finally {
+      button.disabled = false;
+      button.textContent = labels.submit;
+    }
+  });
+</script>
+<style>
+  form {
+    display: grid;
+    gap: 1.25rem;
+  }
+  .mode {
+    padding: 1rem;
+    border-left: 4px solid var(--ocean-500);
+    background: var(--cloud-050);
+  }
+  label {
+    display: grid;
+    gap: 0.45rem;
+    font-weight: 700;
+  }
+  label > span {
+    font-size: 0.72rem;
+    color: var(--slate-600);
+  }
+  input,
+  select,
+  textarea {
+    width: 100%;
+    min-height: 2.9rem;
+    padding: 0.7rem;
+    border: 1px solid rgb(20 33 29 / 38%);
+    border-radius: var(--radius-sm);
+    color: var(--ink-900);
+    background: var(--white);
+  }
+  textarea {
+    resize: vertical;
+  }
+  small {
+    font-weight: 400;
+    color: var(--slate-600);
+  }
+  .form-grid {
+    display: grid;
+    gap: 1.25rem;
+  }
+  .check {
+    grid-template-columns: auto 1fr;
+    align-items: start;
+  }
+  .check input {
+    width: 1.25rem;
+    min-height: 1.25rem;
+    margin-top: 0.2rem;
+  }
+  .check span {
+    font-size: 0.9rem;
+    font-weight: 500;
+  }
+  .honeypot {
+    position: absolute;
+    left: -10000px;
+  }
+  .error-summary {
+    padding: 1rem;
+    border: 2px solid var(--danger-700);
+    border-radius: 0.5rem;
+    color: var(--danger-700);
+  }
+  button {
+    min-height: 3rem;
+    padding: 0.7rem 1.2rem;
+    border: 0;
+    border-radius: 0.5rem;
+    color: var(--white);
+    background: var(--forest-700);
+    font-weight: 750;
+    cursor: pointer;
+  }
+  .status {
+    min-height: 1.6rem;
+    font-weight: 650;
+  }
+  @media (min-width: 38rem) {
+    .form-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+  }
+</style>

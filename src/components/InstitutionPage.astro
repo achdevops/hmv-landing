@@ -1,0 +1,330 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Button from '@/components/ui/Button.astro';
+import { route, type Locale, type RouteKey } from '@/i18n/routes';
+type Kind = 'capabilities' | 'lab' | 'learn' | 'collaborate' | 'about' | 'privacy';
+const { locale, kind } = Astro.props as { locale: Locale; kind: Kind };
+const content = {
+  capabilities: {
+    es: {
+      title: 'Capacidades para experimentar con propósito',
+      lead: 'Conectamos tecnología, datos y aprendizaje para convertir preguntas sostenibles en pruebas concretas.',
+      items: [
+        [
+          'Cloud',
+          'Arquitectura estática, procesamiento, almacenamiento, automatización y observabilidad para prototipos. Seleccionamos servicios según el problema, costo, seguridad y huella operativa.',
+        ],
+        [
+          'IA & datos',
+          'Exploramos visión computacional, clasificación, detección, análisis geoespacial y flujos asistidos. La revisión humana y la calidad de datos son parte del sistema.',
+        ],
+        [
+          'IoT',
+          'Integramos conceptualmente sensores, telemetría y fuentes de campo. Antes de desplegar, evaluamos conectividad, energía, mantenimiento y privacidad.',
+        ],
+        [
+          'Educación',
+          'Creamos talleres sobre GreenTech Labs, IA, Cloud, IoT y tokenización de energía renovable, sin presentarla como recomendación financiera.',
+        ],
+      ],
+    },
+    en: {
+      title: 'Capabilities for purpose-driven experimentation',
+      lead: 'We connect technology, data and learning to turn sustainability questions into concrete tests.',
+      items: [
+        [
+          'Cloud',
+          'Static architecture, processing, storage, automation and observability for prototypes. We select services based on the problem, cost, security and operational footprint.',
+        ],
+        [
+          'AI & data',
+          'We explore computer vision, classification, detection, geospatial analysis and assisted workflows. Human review and data quality are part of the system.',
+        ],
+        [
+          'IoT',
+          'We conceptually integrate sensors, telemetry and field sources. Before deployment, we evaluate connectivity, energy, maintenance and privacy.',
+        ],
+        [
+          'Education',
+          'We create workshops on GreenTech Labs, AI, Cloud, IoT and renewable-energy tokenization, without presenting it as financial advice.',
+        ],
+      ],
+    },
+  },
+  lab: {
+    es: {
+      title: 'Un laboratorio para aprender construyendo',
+      lead: 'No empezamos por una herramienta. Empezamos por una pregunta, las personas afectadas y la evidencia necesaria para tomar una mejor decisión.',
+      items: [
+        ['Observar', 'Comprender un problema real y a las personas involucradas.'],
+        ['Definir', 'Plantear una hipótesis, restricciones y evidencia necesaria.'],
+        ['Investigar', 'Revisar datos, contexto, privacidad y actores.'],
+        ['Construir', 'Crear una prueba técnica pequeña y revisable.'],
+        ['Probar', 'Buscar un partner, contexto y criterios acordados.'],
+        ['Aprender', 'Medir, documentar y decidir si iterar, convertir o cerrar.'],
+      ],
+    },
+    en: {
+      title: 'A lab for learning by building',
+      lead: 'We do not start with a tool. We start with a question, the people affected and the evidence needed to make a better decision.',
+      items: [
+        ['Observe', 'Understand a real problem and the people involved.'],
+        ['Define', 'State a hypothesis, constraints and required evidence.'],
+        ['Research', 'Review data, context, privacy and stakeholders.'],
+        ['Build', 'Create a small, reviewable technical proof.'],
+        ['Test', 'Seek a partner, context and agreed criteria.'],
+        ['Learn', 'Measure, document and decide whether to iterate, convert or close.'],
+      ],
+    },
+  },
+  learn: {
+    es: {
+      title: 'Compartir conocimiento también genera impacto',
+      lead: 'Diseñamos talleres introductorios y conversaciones para organizaciones, comunidades educativas y equipos que quieran acercarse a GreenTech.',
+      items: [
+        ['GreenTech Labs', 'De una pregunta a un experimento responsable.'],
+        ['IA, Cloud e IoT', 'Fundamentos aplicados a desafíos sostenibles.'],
+        [
+          'Tokenización de energía renovable',
+          'Cultura y fundamentos; no constituye asesoramiento financiero, legal ni de inversión.',
+        ],
+      ],
+    },
+    en: {
+      title: 'Sharing knowledge also creates impact',
+      lead: 'We design introductory workshops and discussions for organizations, learning communities and teams interested in GreenTech.',
+      items: [
+        ['GreenTech Labs', 'From a question to a responsible experiment.'],
+        ['AI, Cloud and IoT', 'Foundations applied to sustainability challenges.'],
+        [
+          'Renewable-energy tokenization',
+          'Culture and foundations; not financial, legal or investment advice.',
+        ],
+      ],
+    },
+  },
+  collaborate: {
+    es: {
+      title: 'Construyamos la próxima prueba juntos',
+      lead: 'Buscamos relaciones concretas, con expectativas claras y una pregunta que podamos validar.',
+      items: [
+        ['Sitio piloto', 'Propón un contexto y una decisión real por mejorar.'],
+        ['Datos e investigación', 'Aporta una fuente autorizada, metodología o validación.'],
+        [
+          'Cloud, IoT o hardware',
+          'Contribuye infraestructura, créditos, sensores, drones o equipamiento.',
+        ],
+        ['Programa o financiación', 'Ayuda a llevar una hipótesis hacia una prueba medible.'],
+        ['Talleres y mentoría', 'Facilita un espacio o comparte experiencia técnica.'],
+      ],
+    },
+    en: {
+      title: 'Let us build the next test together',
+      lead: 'We seek concrete relationships, clear expectations and a question we can validate.',
+      items: [
+        ['Pilot site', 'Propose a context and a real decision to improve.'],
+        ['Data and research', 'Contribute an authorized source, methodology or validation.'],
+        [
+          'Cloud, IoT or hardware',
+          'Contribute infrastructure, credits, sensors, drones or equipment.',
+        ],
+        ['Program or funding', 'Help move a hypothesis toward a measurable test.'],
+        ['Workshops and mentorship', 'Host a space or share technical experience.'],
+      ],
+    },
+  },
+  about: {
+    es: {
+      title: 'Una iniciativa familiar con vocación de laboratorio',
+      lead: 'Hola Mundo Verde nace en Maldonado, Uruguay, para conectar experiencia tecnológica, curiosidad y sostenibilidad.',
+      items: [
+        ['Construcción gradual', 'Una investigación, un prototipo y una colaboración a la vez.'],
+        [
+          'Identidad institucional',
+          'Protegemos la privacidad familiar y mantenemos un punto de contacto común.',
+        ],
+        [
+          'Principios',
+          'Evidencia antes que promesas, etapas visibles, datos responsables y aprendizaje documentado.',
+        ],
+      ],
+    },
+    en: {
+      title: 'A family-led initiative with a lab mindset',
+      lead: 'Hola Mundo Verde began in Maldonado, Uruguay, to connect technology experience, curiosity and sustainability.',
+      items: [
+        ['Gradual growth', 'One research question, prototype and collaboration at a time.'],
+        [
+          'Institutional identity',
+          'We protect family privacy and maintain one shared point of contact.',
+        ],
+        [
+          'Principles',
+          'Evidence before promises, visible stages, responsible data and documented learning.',
+        ],
+      ],
+    },
+  },
+  privacy: {
+    es: {
+      title: 'Privacidad',
+      lead: 'Borrador para revisión legal antes de habilitar el formulario en producción.',
+      items: [
+        [
+          'Datos que solicitamos',
+          'Nombre, email, organización opcional, interés, etapa opcional, mensaje, consentimiento, idioma y página de origen. No envíes datos sensibles ni información confidencial.',
+        ],
+        [
+          'Finalidad',
+          'Usar los datos únicamente para responder la consulta y continuar una conversación solicitada.',
+        ],
+        [
+          'Proveedores',
+          'La implementación prevista utiliza Cloudflare para protección y procesamiento del formulario, y Mailgun para entrega del correo. Región y transferencias están pendientes de confirmación.',
+        ],
+        [
+          'Conservación y derechos',
+          'El plazo de conservación, responsable de tratamiento y procedimiento de acceso, corrección o eliminación deben confirmarse antes de producción. Escribe a hola@holamundoverde.com para consultas.',
+        ],
+      ],
+    },
+    en: {
+      title: 'Privacy',
+      lead: 'Draft pending legal review before the production contact form is enabled.',
+      items: [
+        [
+          'Data we request',
+          'Name, email, optional organization, interest, optional stage, message, consent, language and source page. Do not send sensitive data or confidential information.',
+        ],
+        [
+          'Purpose',
+          'Use the data only to answer the inquiry and continue a requested conversation.',
+        ],
+        [
+          'Providers',
+          'The planned implementation uses Cloudflare to protect and process the form, and Mailgun to deliver email. Region and transfers remain to be confirmed.',
+        ],
+        [
+          'Retention and rights',
+          'Retention, the data controller and the access, correction or deletion process must be confirmed before production. Email hola@holamundoverde.com with questions.',
+        ],
+      ],
+    },
+  },
+} as const;
+const c = content[kind][locale];
+const routeKey = kind as RouteKey;
+const title = `${c.title} | Hola Mundo Verde`;
+const description = c.lead;
+const alternate = route(kind as RouteKey, locale === 'es' ? 'en' : 'es');
+---
+
+<BaseLayout {locale} {title} {description} {routeKey} {alternate}>
+  <header class="page-hero">
+    <div class="container">
+      <p class="eyebrow">
+        Hola Mundo Verde · {kind === 'privacy' ? (locale === 'es' ? 'Aviso' : 'Notice') : kind}
+      </p><h1>{c.title}</h1><p class="lead">{c.lead}</p>
+    </div>
+  </header>
+  <section class="section">
+    <div class:list={['container', 'items', { 'items--method': kind === 'lab' }]}>
+      {
+        c.items.map(([heading, body], i) => (
+          <article>
+            <>
+              <span>0{i + 1}</span>
+              <h2>{heading}</h2>
+              <p>{body}</p>
+            </>
+          </article>
+        ))
+      }
+    </div>
+  </section>
+  {
+    kind !== 'privacy' && (
+      <section class="cta">
+        <div class="container grid-2">
+          <>
+            <h2>
+              {locale === 'es'
+                ? '¿Qué podríamos explorar juntos?'
+                : 'What could we explore together?'}
+            </h2>
+            <div>
+              <>
+                <p>
+                  {locale === 'es'
+                    ? 'Comparte un desafío, un recurso o una pregunta concreta.'
+                    : 'Share a challenge, a resource or a concrete question.'}
+                </p>
+                <Button
+                  href={`${route('contact', locale)}${kind === 'learn' ? '?interest=workshop' : ''}`}
+                  variant="light"
+                >
+                  {locale === 'es' ? 'Iniciar una conversación' : 'Start a conversation'}
+                </Button>
+              </>
+            </div>
+          </>
+        </div>
+      </section>
+    )
+  }
+</BaseLayout>
+<style>
+  .page-hero {
+    padding-block: clamp(4rem, 10vw, 8rem);
+    background: linear-gradient(130deg, var(--white), var(--sand-200));
+  }
+  .page-hero h1 {
+    max-width: 16ch;
+  }
+  .items {
+    display: grid;
+    gap: 0;
+    border-top: 1px solid rgb(20 33 29 / 18%);
+  }
+  .items article {
+    display: grid;
+    gap: 1rem;
+    padding: 2rem 0;
+    border-bottom: 1px solid rgb(20 33 29 / 18%);
+  }
+  .items span {
+    font: 700 0.75rem var(--font-mono);
+    color: var(--forest-700);
+  }
+  .items h2 {
+    font-size: clamp(1.4rem, 2.5vw, 2rem);
+  }
+  .items p {
+    color: var(--slate-600);
+  }
+  .cta {
+    padding-block: clamp(4rem, 8vw, 7rem);
+    color: var(--white);
+    background: var(--forest-900);
+  }
+  .cta p {
+    margin-bottom: 1.5rem;
+    color: rgb(255 255 255 / 75%);
+  }
+  @media (min-width: 50rem) {
+    .items article {
+      grid-template-columns: 0.35fr 1fr 1.5fr;
+      align-items: start;
+    }
+    .items--method {
+      grid-template-columns: repeat(2, 1fr);
+      gap: 0 2rem;
+    }
+    .items--method article {
+      display: block;
+    }
+    .items--method article h2 {
+      margin: 0.8rem 0;
+    }
+  }
+</style>

@@ -1,0 +1,358 @@
+---
+import { getCollection } from 'astro:content';
+import Button from '@/components/ui/Button.astro';
+import ProjectCard from '@/components/projects/ProjectCard.astro';
+import { route, type Locale } from '@/i18n/routes';
+const { locale } = Astro.props as { locale: Locale };
+const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+const c =
+  locale === 'es'
+    ? {
+        eyebrow: 'GreenTech Innovation Lab · Maldonado, Uruguay',
+        h1: 'Exploramos ideas. Construimos prototipos. Generamos impacto.',
+        lead: 'Combinamos inteligencia artificial, Cloud, IoT y educación para investigar desafíos ambientales, probar soluciones y construir alianzas con propósito.',
+        aboutTitle: 'Una iniciativa familiar con método de laboratorio',
+        about:
+          'Hola Mundo Verde crece alrededor de una convicción: la tecnología puede ayudarnos a comprender desafíos sostenibles y convertir buenas ideas en experimentos útiles. Trabajamos por etapas, documentamos lo aprendido y buscamos organizaciones que quieran investigar, probar o enseñar junto a nosotros.',
+        capsTitle: 'Tecnología aplicada con un foco claro',
+        capsLead:
+          'Estas son las capacidades que hoy conectamos en proyectos y espacios de aprendizaje.',
+        caps: [
+          [
+            'Cloud',
+            'Bases técnicas para experimentar, procesar datos y hacer crecer soluciones de forma responsable.',
+          ],
+          [
+            'IA & datos',
+            'Visión computacional, análisis y automatización para convertir datos en información útil.',
+          ],
+          ['IoT', 'Sensores y fuentes de campo conectados con sistemas de observación y análisis.'],
+          [
+            'Educación',
+            'Talleres para compartir fundamentos, prácticas y nuevas preguntas sobre GreenTech.',
+          ],
+        ],
+        work: 'Lo que estamos explorando',
+        method: 'De una pregunta a un piloto medible',
+        steps: [
+          ['Research', 'Entendemos el problema, datos, restricciones y personas.'],
+          ['Prototype', 'Construimos la prueba mínima que permita aprender.'],
+          ['Pilot', 'Probamos con un partner y criterios acordados.'],
+          ['MVP', 'Consolidamos lo que demostró valor y decidimos.'],
+        ],
+        learnTitle: 'Aprender también es construir impacto',
+        learn:
+          'Preparamos talleres sobre GreenTech Labs, aplicaciones responsables de IA, Cloud e IoT, y cultura de tokenización de energías renovables.',
+        final: '¿Hay un desafío que podríamos explorar juntos?',
+        finalBody:
+          'Cuéntanos qué problema observas, qué recursos puedes aportar o qué colaboración imaginas.',
+      }
+    : {
+        eyebrow: 'GreenTech Innovation Lab · Maldonado, Uruguay',
+        h1: 'We explore ideas. We build prototypes. We create impact.',
+        lead: 'We combine artificial intelligence, Cloud, IoT and education to investigate environmental challenges, test solutions and build purpose-driven partnerships.',
+        aboutTitle: 'A family-led initiative with a lab method',
+        about:
+          'Hola Mundo Verde grows around one conviction: technology can help us understand sustainability challenges and turn good ideas into useful experiments. We work in stages, document what we learn and seek organizations willing to research, test or teach alongside us.',
+        capsTitle: 'Applied technology with a clear focus',
+        capsLead:
+          'These are the capabilities we currently connect across projects and learning spaces.',
+        caps: [
+          [
+            'Cloud',
+            'Technical foundations to experiment, process data and grow solutions responsibly.',
+          ],
+          [
+            'AI & data',
+            'Computer vision, analytics and automation to turn data into useful information.',
+          ],
+          ['IoT', 'Sensors and field sources connected to observation and analysis systems.'],
+          [
+            'Education',
+            'Workshops sharing foundations, practices and new questions about GreenTech.',
+          ],
+        ],
+        work: 'What we are exploring',
+        method: 'From a question to a measurable pilot',
+        steps: [
+          ['Research', 'We understand the problem, data, constraints and people.'],
+          ['Prototype', 'We build the smallest proof that can produce learning.'],
+          ['Pilot', 'We test with a partner and agreed criteria.'],
+          ['MVP', 'We consolidate what demonstrated value and decide.'],
+        ],
+        learnTitle: 'Learning also creates impact',
+        learn:
+          'We are preparing workshops on GreenTech Labs, responsible applications of AI, Cloud and IoT, and renewable-energy tokenization culture.',
+        final: 'Is there a challenge we could explore together?',
+        finalBody:
+          'Tell us what problem you observe, what resources you can contribute or what collaboration you imagine.',
+      };
+---
+
+<section class="hero">
+  <div class="hero-image" aria-hidden="true"></div><div class="container hero-inner">
+    <div>
+      <p class="eyebrow">{c.eyebrow}</p><h1>{c.h1}</h1><p class="lead">{c.lead}</p><div
+        class="cluster actions"
+      >
+        <Button href={route('projects', locale)}
+          >{locale === 'es' ? 'Explorar proyectos' : 'Explore projects'}</Button
+        ><Button href={route('collaborate', locale)} variant="secondary"
+          >{locale === 'es' ? 'Colaborar con nosotros' : 'Collaborate with us'}</Button
+        >
+      </div>
+    </div>
+  </div>
+</section>
+<section class="section intro">
+  <div class="container grid-2">
+    <p class="eyebrow">01 · {locale === 'es' ? 'Quiénes somos' : 'Who we are'}</p><div>
+      <h2>{c.aboutTitle}</h2><p class="lead">{c.about}</p>
+    </div>
+  </div>
+</section>
+<section class="section capabilities">
+  <div class="container">
+    <div class="section-heading">
+      <div>
+        <p class="eyebrow">
+          02 · {locale === 'es' ? 'Capacidades activas' : 'Active capabilities'}
+        </p><h2>{c.capsTitle}</h2>
+      </div><p>{c.capsLead}</p>
+    </div><div class="cap-grid">
+      {
+        c.caps.map(([title, text], i) => (
+          <article>
+            <>
+              <span>0{i + 1}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </>
+          </article>
+        ))
+      }
+    </div><a class="text-link" href={route('capabilities', locale)}
+      >{locale === 'es' ? 'Ver capacidades' : 'View capabilities'} →</a
+    >
+  </div>
+</section>
+<section class="section projects">
+  <div class="container">
+    <p class="eyebrow">03 · {c.work}</p><h2>
+      {
+        locale === 'es'
+          ? 'La costa como territorio de investigación'
+          : 'The coast as a field for research'
+      }
+    </h2><div class="project-grid">
+      {projects.map((project) => <ProjectCard {project} {locale} />)}
+    </div>
+  </div>
+</section>
+<section class="section method">
+  <div class="container">
+    <p class="eyebrow">04 · Lab</p><h2>{c.method}</h2><ol>
+      {
+        c.steps.map(([title, text], i) => (
+          <li>
+            <>
+              <span>0{i + 1}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </>
+          </li>
+        ))
+      }
+    </ol>
+  </div>
+</section>
+<section class="section learn">
+  <div class="container grid-2">
+    <div><p class="eyebrow">05 · Learn</p><h2>{c.learnTitle}</h2></div><div>
+      <p class="lead">{c.learn}</p><p class="open">
+        {
+          locale === 'es'
+            ? 'Interés abierto · Fechas por confirmar'
+            : 'Interest open · Dates to be confirmed'
+        }
+      </p><Button href={`${route('contact', locale)}?interest=workshop`} variant="secondary"
+        >{locale === 'es' ? 'Registrar interés' : 'Register interest'}</Button
+      >
+    </div>
+  </div>
+</section>
+<section class="section final">
+  <div class="container">
+    <p class="eyebrow">06 · {locale === 'es' ? 'Colaborar' : 'Collaborate'}</p><h2>{c.final}</h2><p
+      class="lead"
+    >
+      {c.finalBody}
+    </p><Button href={route('contact', locale)} variant="light"
+      >{locale === 'es' ? 'Iniciar una conversación' : 'Start a conversation'}</Button
+    >
+  </div>
+</section>
+<style>
+  .hero {
+    position: relative;
+    min-height: clamp(44rem, 82vh, 58rem);
+    overflow: hidden;
+    background: var(--sand-200);
+  }
+  .hero-image {
+    position: absolute;
+    inset: 0;
+    background:
+      linear-gradient(
+        90deg,
+        var(--cloud-050) 0%,
+        rgb(245 247 242 / 95%) 35%,
+        rgb(245 247 242 / 8%) 70%
+      ),
+      url('/images/generated/hero-home-greentech.webp') center/cover;
+  }
+  .hero-inner {
+    position: relative;
+    display: grid;
+    min-height: inherit;
+    align-items: center;
+    padding-block: 5rem;
+  }
+  .hero-inner > div {
+    max-width: 46rem;
+  }
+  .actions {
+    margin-top: 2rem;
+  }
+  .intro {
+    background: var(--white);
+  }
+  .section-heading {
+    display: grid;
+    gap: 2rem;
+    margin-bottom: 3rem;
+  }
+  .section-heading > p {
+    align-self: end;
+    color: var(--slate-600);
+    font-size: 1.1rem;
+  }
+  .cap-grid {
+    display: grid;
+    border-top: 1px solid rgb(20 33 29 / 18%);
+  }
+  .cap-grid article {
+    padding: 2rem 0;
+    border-bottom: 1px solid rgb(20 33 29 / 18%);
+  }
+  .cap-grid span,
+  .method li > span {
+    font: 700 0.75rem var(--font-mono);
+  }
+  .cap-grid span {
+    color: var(--forest-700);
+  }
+  .method li > span {
+    color: var(--lime-300);
+  }
+  .cap-grid h3 {
+    margin-top: 1.5rem;
+  }
+  .cap-grid p {
+    margin-top: 0.75rem;
+    color: var(--slate-600);
+  }
+  .text-link {
+    display: inline-block;
+    margin-top: 2rem;
+    font-weight: 750;
+  }
+  .projects {
+    background: var(--sand-200);
+  }
+  .project-grid {
+    display: grid;
+    gap: 1.5rem;
+    margin-top: 3rem;
+  }
+  .project-grid > :first-child {
+    grid-column: 1/-1;
+  }
+  .method {
+    color: var(--white);
+    background: var(--forest-900);
+  }
+  .method ol {
+    display: grid;
+    margin: 3rem 0 0;
+    padding: 0;
+    list-style: none;
+  }
+  .method li {
+    padding: 1.6rem 0;
+    border-top: 1px solid rgb(255 255 255 / 22%);
+  }
+  .method h3 {
+    margin-top: 0.8rem;
+  }
+  .method p {
+    margin-top: 0.6rem;
+    color: rgb(255 255 255 / 70%);
+  }
+  .learn {
+    background: var(--white);
+  }
+  .open {
+    margin: 1.5rem 0;
+    font: 700 0.78rem var(--font-mono);
+    text-transform: uppercase;
+  }
+  .final {
+    color: var(--white);
+    background: linear-gradient(120deg, var(--forest-900), var(--forest-700));
+  }
+  .final .lead {
+    margin-bottom: 2rem;
+    color: rgb(255 255 255 / 75%);
+  }
+  @media (min-width: 48rem) {
+    .section-heading {
+      grid-template-columns: 1.5fr 1fr;
+    }
+    .cap-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .cap-grid article:nth-child(odd) {
+      padding-right: 2rem;
+      border-right: 1px solid rgb(20 33 29 / 18%);
+    }
+    .cap-grid article:nth-child(even) {
+      padding-left: 2rem;
+    }
+    .project-grid {
+      grid-template-columns: 1.6fr 1fr;
+    }
+    .method ol {
+      grid-template-columns: repeat(4, 1fr);
+    }
+    .method li {
+      padding: 1.5rem;
+      border-left: 1px solid rgb(255 255 255 / 22%);
+    }
+  }
+  @media (max-width: 40rem) {
+    .hero-image {
+      opacity: 0.32;
+      background-position: 66% center;
+    }
+    .hero h1 {
+      font-size: clamp(2.45rem, 14vw, 4rem);
+    }
+    .actions {
+      align-items: stretch;
+    }
+    .actions :global(.button) {
+      width: 100%;
+    }
+  }
+</style>

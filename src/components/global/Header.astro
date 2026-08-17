@@ -1,0 +1,226 @@
+---
+import { route, type Locale, type RouteKey } from '@/i18n/routes';
+import { ui } from '@/i18n/ui';
+import LanguageSwitcher from './LanguageSwitcher.astro';
+interface Props {
+  locale: Locale;
+  current?: RouteKey | undefined;
+  alternate: string;
+}
+const { locale, current, alternate } = Astro.props;
+const t = ui[locale];
+const items: { key: RouteKey; label: string }[] = [
+  { key: 'projects', label: t.projects },
+  { key: 'capabilities', label: t.capabilities },
+  { key: 'lab', label: t.lab },
+  { key: 'learn', label: t.learn },
+  { key: 'collaborate', label: t.collaborate },
+  { key: 'about', label: t.about },
+];
+---
+
+<header class="site-header">
+  <div class="header-inner">
+    <a class="brand" href={route('home', locale)} aria-label={`Hola Mundo Verde — ${t.home}`}>
+      <span class="mark" aria-hidden="true"><i></i><b></b></span><span
+        >Hola Mundo<br /><strong>Verde</strong></span
+      >
+    </a>
+    <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav"
+      ><span>{t.menu}</span><i aria-hidden="true"></i></button
+    >
+    <nav id="main-nav" aria-label={locale === 'es' ? 'Principal' : 'Primary'}>
+      <div class="nav-links">
+        {
+          items.map((item) => (
+            <a
+              href={route(item.key, locale)}
+              aria-current={current === item.key ? 'page' : undefined}
+            >
+              {item.label}
+            </a>
+          ))
+        }
+      </div>
+      <LanguageSwitcher {locale} {alternate} />
+      <a
+        class="contact-link"
+        href={route('contact', locale)}
+        aria-current={current === 'contact' ? 'page' : undefined}>{t.contact}</a
+      >
+    </nav>
+  </div>
+</header>
+<script>
+  const button = document.querySelector<HTMLButtonElement>('.menu-button');
+  const nav = document.querySelector<HTMLElement>('#main-nav');
+  const setOpen = (open: boolean) => {
+    if (!button || !nav) return;
+    button.setAttribute('aria-expanded', String(open));
+    nav.dataset.open = String(open);
+    document.body.classList.toggle('nav-open', open);
+  };
+  button?.addEventListener('click', () => setOpen(button.getAttribute('aria-expanded') !== 'true'));
+  document.addEventListener('keydown', (event) => {
+    if (event.key === 'Escape' && button?.getAttribute('aria-expanded') === 'true') {
+      setOpen(false);
+      button.focus();
+    }
+  });
+</script>
+<style>
+  .site-header {
+    position: relative;
+    z-index: 20;
+    background: rgb(245 247 242 / 94%);
+    border-bottom: 1px solid rgb(20 33 29 / 12%);
+    backdrop-filter: blur(12px);
+  }
+  .header-inner {
+    width: min(calc(100% - 2.5rem), var(--container));
+    min-height: 5rem;
+    margin: auto;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    gap: 1rem;
+  }
+  .brand {
+    display: flex;
+    align-items: center;
+    gap: 0.7rem;
+    color: var(--ink-900);
+    font: 650 0.8rem/1.05 var(--font-display);
+    letter-spacing: -0.02em;
+    text-decoration: none;
+  }
+  .brand strong {
+    color: var(--forest-700);
+  }
+  .mark {
+    position: relative;
+    display: grid;
+    width: 2.4rem;
+    height: 2.4rem;
+    place-items: center;
+    border: 1px solid var(--forest-700);
+    border-radius: 50%;
+  }
+  .mark::before,
+  .mark::after,
+  .mark i,
+  .mark b {
+    content: '';
+    position: absolute;
+    background: var(--forest-700);
+  }
+  .mark::before {
+    width: 1.3rem;
+    height: 1px;
+    transform: rotate(-16deg);
+  }
+  .mark::after {
+    width: 0.38rem;
+    height: 0.38rem;
+    border-radius: 50%;
+    transform: translate(0.55rem, -0.25rem);
+  }
+  .mark i {
+    width: 0.42rem;
+    height: 0.42rem;
+    border-radius: 50%;
+    transform: translate(-0.5rem, 0.22rem);
+  }
+  .mark b {
+    width: 1px;
+    height: 1.2rem;
+    transform: rotate(38deg);
+  }
+  nav {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+  }
+  .nav-links {
+    display: flex;
+    align-items: center;
+    gap: clamp(0.7rem, 1.4vw, 1.35rem);
+  }
+  nav a {
+    color: var(--ink-900);
+    font-size: 0.88rem;
+    font-weight: 650;
+    text-decoration: none;
+  }
+  nav a:hover,
+  .nav-links a[aria-current='page'] {
+    text-decoration: underline;
+    text-decoration-color: var(--lime-300);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.4rem;
+  }
+  .contact-link {
+    display: grid;
+    min-height: 2.75rem;
+    place-items: center;
+    padding: 0.5rem 1rem !important;
+    color: var(--white) !important;
+    background: var(--forest-700);
+    border-radius: var(--radius-sm);
+  }
+  .menu-button {
+    display: none;
+    min-height: 2.75rem;
+    padding: 0.4rem 0.75rem;
+    border: 1px solid var(--forest-700);
+    border-radius: 0.5rem;
+    color: var(--forest-900);
+    background: transparent;
+    font-weight: 750;
+  }
+  @media (max-width: 67rem) {
+    .menu-button {
+      display: block;
+    }
+    nav {
+      position: absolute;
+      top: 100%;
+      left: 0;
+      width: 100%;
+      display: none;
+      padding: 1.25rem;
+      background: var(--cloud-050);
+      border-bottom: 1px solid rgb(20 33 29 / 15%);
+      box-shadow: var(--shadow);
+    }
+    nav[data-open='true'] {
+      display: grid;
+      grid-template-columns: 1fr auto;
+      align-items: start;
+    }
+    .nav-links {
+      display: grid;
+      gap: 0;
+    }
+    .nav-links a {
+      display: flex;
+      min-height: 3rem;
+      align-items: center;
+      font-size: 1rem;
+    }
+    .contact-link {
+      grid-column: 1/-1;
+    }
+    .nav-open {
+      overflow: hidden;
+    }
+  }
+  @media (max-width: 25rem) {
+    nav[data-open='true'] {
+      grid-template-columns: 1fr;
+    }
+    .language {
+      margin-top: 0.5rem;
+    }
+  }
+</style>

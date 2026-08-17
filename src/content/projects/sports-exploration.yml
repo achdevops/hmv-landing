@@ -1,0 +1,21 @@
+projectId: project-002
+slugs:
+  es: iniciativa-deportiva
+  en: sports-initiative
+visibility: teaser
+stage: idea
+featured: false
+order: 20
+title:
+  es: Nuevas formas de reconocer el esfuerzo deportivo
+  en: New ways to recognize sporting achievement
+summary:
+  es: Investigamos una experiencia digital vinculada al reconocimiento deportivo. Compartiremos más información cuando sea oportuno.
+  en: We are researching a digital experience related to sports recognition. We will share more when appropriate.
+tags: [Exploración reservada]
+capabilities: []
+impactThemes: []
+updatedAt: 2026-08-17
+contactInterest: other
+needs: []
+noindex: true

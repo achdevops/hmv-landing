@@ -1,0 +1,24 @@
+---
+interface Props {
+  label: string;
+}
+const { label } = Astro.props;
+---
+
+<a class="skip" href="#main">{label}</a>
+<style>
+  .skip {
+    position: fixed;
+    z-index: 100;
+    top: 0.75rem;
+    left: 0.75rem;
+    padding: 0.7rem 1rem;
+    color: var(--forest-900);
+    background: var(--lime-300);
+    font-weight: 800;
+    transform: translateY(-160%);
+  }
+  .skip:focus {
+    transform: none;
+  }
+</style>

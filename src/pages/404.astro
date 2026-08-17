@@ -1,0 +1,35 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import Button from '@/components/ui/Button.astro';
+---
+
+<BaseLayout
+  locale="es"
+  title="Página no encontrada | Hola Mundo Verde"
+  description="La página solicitada no existe."
+  alternate="/en/"
+  noindex
+  ><section class="not-found">
+    <div class="container">
+      <p class="eyebrow">404 · Fuera de ruta</p><h1>Esta página no existe</h1><p class="lead">
+        The page you requested could not be found.
+      </p><div class="cluster">
+        <Button href="/es/">Volver al inicio</Button><Button href="/en/" variant="secondary"
+          >Back home</Button
+        >
+      </div>
+    </div>
+  </section></BaseLayout
+>
+<style>
+  .not-found {
+    display: grid;
+    min-height: 65vh;
+    align-items: center;
+    padding-block: 5rem;
+    background: var(--sand-200);
+  }
+  .cluster {
+    margin-top: 2rem;
+  }
+</style>

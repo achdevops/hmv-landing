@@ -1,0 +1,188 @@
+---
+import { getCollection } from 'astro:content';
+import ProjectLayout from '@/layouts/ProjectLayout.astro';
+import ProjectFlow from './ProjectFlow.astro';
+import Button from '@/components/ui/Button.astro';
+import { route, type Locale } from '@/i18n/routes';
+const { locale } = Astro.props as { locale: Locale };
+const project = (await getCollection('projects')).find((p) => p.data.projectId === 'project-001');
+if (!project) throw new Error('Missing project-001');
+const d = project.data;
+const c =
+  locale === 'es'
+    ? {
+        why: 'Por qué importa',
+        whyBody:
+          'La observación de costas puede ser periódica, manual, fragmentada o difícil de comparar. Actores locales podrían beneficiarse de información repetible y contextual para priorizar revisiones y coordinar respuestas.',
+        hypothesis: 'Hipótesis de investigación',
+        hypothesisBody:
+          'Un protocolo consistente de captura podría mejorar la comparabilidad. Un modelo de visión para un caso estrecho podría priorizar áreas para revisión humana, siempre mostrando evidencia, confianza y trazabilidad.',
+        approach: 'Enfoque conceptual',
+        impact: 'Impacto potencial',
+        impactBody:
+          'Observación ambiental más consistente, menos revisión de material irrelevante y mejor contexto para colaborar. No cuantificaremos beneficios hasta contar con una línea base.',
+        evidence: 'Etapa y evidencia',
+        evidenceBody:
+          'Research. La definición inicial requiere discovery con actores locales. No hay sitio piloto, dataset, partner, métricas ni sistema operativo confirmados.',
+        roadmap: 'Camino de validación',
+        gates: [
+          [
+            'Gate 0 · Discovery',
+            'Problema, entrevistas, permisos, privacidad, baseline y criterio de éxito.',
+          ],
+          ['Gate 1 · Dataset', 'Fuente autorizada, ficha, guía de anotación y muestra evaluable.'],
+          [
+            'Gate 2 · Prueba técnica',
+            'Pipeline reproducible, baseline, modelo y evaluación segmentada.',
+          ],
+          ['Gate 3 · Prototipo', 'Salida revisable, pruebas de utilidad y revisión de riesgos.'],
+          ['Gate 4 · Piloto', 'Partner, sitio, acuerdos, métricas y decisión.'],
+        ],
+        needs: 'Colaboración buscada',
+        needsBody:
+          'Sitio piloto, especialistas costeros, dataset autorizado, metodología, operadores habilitados, créditos Cloud, equipamiento, validación y financiación.',
+        responsible: 'Uso responsable',
+        responsibleBody:
+          'No identificamos ni seguimos personas, no automatizamos sanciones y no reemplazamos inspección, ciencia, salvamento ni decisión pública. Toda captura debe contar con permisos; toda salida de IA es candidata para revisión humana.',
+      }
+    : {
+        why: 'Why it matters',
+        whyBody:
+          'Coastal observation can be periodic, manual, fragmented or difficult to compare. Local stakeholders could benefit from repeatable, contextual information to prioritize reviews and coordinate responses.',
+        hypothesis: 'Research hypothesis',
+        hypothesisBody:
+          'A consistent capture protocol could improve comparability. A vision model for a narrow use case could prioritize areas for human review while showing evidence, confidence and traceability.',
+        approach: 'Conceptual approach',
+        impact: 'Potential impact',
+        impactBody:
+          'More consistent environmental observation, less time reviewing irrelevant material and better context for collaboration. We will not quantify benefits until a baseline exists.',
+        evidence: 'Stage and evidence',
+        evidenceBody:
+          'Research. The initial definition requires discovery with local stakeholders. No pilot site, dataset, partner, metrics or operating system are confirmed.',
+        roadmap: 'Validation path',
+        gates: [
+          [
+            'Gate 0 · Discovery',
+            'Problem, interviews, permissions, privacy, baseline and success criteria.',
+          ],
+          [
+            'Gate 1 · Dataset',
+            'Authorized source, data sheet, annotation guide and evaluable sample.',
+          ],
+          [
+            'Gate 2 · Technical proof',
+            'Reproducible pipeline, baseline, model and segmented evaluation.',
+          ],
+          ['Gate 3 · Prototype', 'Reviewable output, utility testing and risk review.'],
+          ['Gate 4 · Pilot', 'Partner, site, agreements, metrics and decision.'],
+        ],
+        needs: 'Collaboration sought',
+        needsBody:
+          'A pilot site, coastal specialists, an authorized dataset, methodology, licensed operators, Cloud credits, equipment, validation and funding.',
+        responsible: 'Responsible use',
+        responsibleBody:
+          'We do not identify or track people, automate penalties or replace inspection, science, lifesaving or public decisions. Every capture needs permission; every AI output is a candidate for human review.',
+      };
+---
+
+<ProjectLayout
+  {locale}
+  title={d.title[locale]}
+  description={d.summary[locale]}
+  alternate={route('coast', locale === 'es' ? 'en' : 'es')}
+  stage="research"
+  tags={d.tags}
+  image={d.heroImage!}
+  imageAlt={d.heroAlt![locale]}
+>
+  <article class="prose">
+    <div class="intro-grid">
+      <section><p class="eyebrow">01</p><h2>{c.why}</h2><p>{c.whyBody}</p></section><section>
+        <p class="eyebrow">02</p><h2>{c.hypothesis}</h2><p>{c.hypothesisBody}</p>
+      </section>
+    </div>
+    <section><p class="eyebrow">03</p><h2>{c.approach}</h2><ProjectFlow {locale} /></section>
+    <div class="evidence-grid">
+      <section><p class="eyebrow">04</p><h2>{c.impact}</h2><p>{c.impactBody}</p></section><section
+        class="evidence"
+      >
+        <p class="eyebrow">05</p><h2>{c.evidence}</h2><p>{c.evidenceBody}</p>
+      </section>
+    </div>
+    <section class="roadmap">
+      <p class="eyebrow">06</p><h2>{c.roadmap}</h2><ol>
+        {
+          c.gates.map(([title, body]) => (
+            <li>
+              <>
+                <h3>{title}</h3>
+                <p>{body}</p>
+              </>
+            </li>
+          ))
+        }
+      </ol>
+    </section>
+    <div class="intro-grid">
+      <section>
+        <p class="eyebrow">07</p><h2>{c.needs}</h2><p>{c.needsBody}</p><Button
+          href={`${route('contact', locale)}?interest=pilot`}
+          >{locale === 'es' ? 'Proponer colaboración' : 'Propose collaboration'}</Button
+        >
+      </section><section>
+        <p class="eyebrow">08</p><h2>{c.responsible}</h2><p>{c.responsibleBody}</p>
+      </section>
+    </div>
+  </article>
+</ProjectLayout>
+<style>
+  .intro-grid,
+  .evidence-grid {
+    display: grid;
+    gap: 3rem;
+    margin-bottom: 5rem;
+  }
+  .prose section > h2 {
+    margin-top: 0;
+  }
+  .prose section > p:not(.eyebrow) {
+    margin-top: 1rem;
+    color: var(--slate-600);
+  }
+  .evidence {
+    padding: 2rem;
+    background: var(--sand-200);
+    border-radius: var(--radius-md);
+  }
+  .roadmap {
+    margin-block: 5rem;
+  }
+  .roadmap ol {
+    display: grid;
+    margin: 2rem 0 0;
+    padding: 0;
+    list-style: none;
+    border-top: 1px solid rgb(20 33 29 / 18%);
+  }
+  .roadmap li {
+    padding: 1.4rem 0;
+    border-bottom: 1px solid rgb(20 33 29 / 18%);
+  }
+  .roadmap h3 {
+    font-size: 1.1rem;
+  }
+  .prose :global(.button) {
+    margin-top: 1.5rem;
+  }
+  @media (min-width: 50rem) {
+    .intro-grid,
+    .evidence-grid {
+      grid-template-columns: repeat(2, 1fr);
+    }
+    .roadmap li {
+      display: grid;
+      grid-template-columns: 0.7fr 1.3fr;
+      gap: 2rem;
+    }
+  }
+</style>

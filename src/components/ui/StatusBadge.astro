@@ -1,0 +1,34 @@
+---
+import type { Locale } from '@/i18n/routes';
+interface Props {
+  stage: 'idea' | 'research' | 'prototype' | 'pilot' | 'mvp' | 'active' | 'completed' | 'private';
+  locale: Locale;
+}
+const { stage, locale } = Astro.props;
+const labels = {
+  idea: { es: 'Idea', en: 'Idea' },
+  research: { es: 'Investigación', en: 'Research' },
+  prototype: { es: 'Prototipo', en: 'Prototype' },
+  pilot: { es: 'Piloto', en: 'Pilot' },
+  mvp: { es: 'MVP', en: 'MVP' },
+  active: { es: 'Activo', en: 'Active' },
+  completed: { es: 'Finalizado', en: 'Completed' },
+  private: { es: 'Exploración reservada', en: 'Private exploration' },
+} as const;
+---
+
+<span class="status"><span aria-hidden="true">●</span>{labels[stage][locale]}</span>
+<style>
+  .status {
+    display: inline-flex;
+    align-items: center;
+    gap: 0.5rem;
+    font: 700 0.75rem/1.3 var(--font-mono);
+    text-transform: uppercase;
+    letter-spacing: 0.06em;
+  }
+  .status span {
+    color: var(--leaf-500);
+    font-size: 0.7rem;
+  }
+</style>

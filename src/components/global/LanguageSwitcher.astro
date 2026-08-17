@@ -1,0 +1,57 @@
+---
+import type { Locale } from '@/i18n/routes';
+interface Props {
+  locale: Locale;
+  alternate: string;
+}
+const { locale, alternate } = Astro.props;
+---
+
+<div class="language" aria-label={locale === 'es' ? 'Idioma' : 'Language'}>
+  {
+    locale === 'es' ? (
+      <>
+        <>
+          <span aria-current="true">ES</span>
+          <span aria-hidden="true">/</span>
+          <a href={alternate} hreflang="en" lang="en">
+            EN
+          </a>
+        </>
+      </>
+    ) : (
+      <>
+        <>
+          <a href={alternate} hreflang="es" lang="es">
+            ES
+          </a>
+          <span aria-hidden="true">/</span>
+          <span aria-current="true">EN</span>
+        </>
+      </>
+    )
+  }
+</div>
+<style>
+  .language {
+    display: flex;
+    align-items: center;
+    gap: 0.35rem;
+    font: 700 0.76rem/1 var(--font-mono);
+    white-space: nowrap;
+  }
+  .language a {
+    min-width: 2.4rem;
+    min-height: 2.75rem;
+    display: grid;
+    place-items: center;
+    color: inherit;
+  }
+  .language [aria-current] {
+    padding: 0.5rem 0.2rem;
+    text-decoration: underline;
+    text-decoration-color: var(--lime-300);
+    text-decoration-thickness: 3px;
+    text-underline-offset: 0.35rem;
+  }
+</style>

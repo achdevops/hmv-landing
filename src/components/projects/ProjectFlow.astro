@@ -1,0 +1,91 @@
+---
+import type { Locale } from '@/i18n/routes';
+const { locale } = Astro.props as { locale: Locale };
+const steps =
+  locale === 'es'
+    ? [
+        ['01', 'Captura autorizada', 'Misión o dataset permitido'],
+        ['02', 'Cloud', 'Ingesta y control de calidad'],
+        ['03', 'IA', 'Análisis versionado'],
+        ['04', 'Revisión humana', 'Aceptar, corregir o descartar'],
+        ['05', 'Información', 'Contexto para una decisión'],
+      ]
+    : [
+        ['01', 'Authorized capture', 'Permitted mission or dataset'],
+        ['02', 'Cloud', 'Ingestion and quality control'],
+        ['03', 'AI', 'Versioned analysis'],
+        ['04', 'Human review', 'Accept, correct or discard'],
+        ['05', 'Information', 'Context for a decision'],
+      ];
+---
+
+<figure class="flow" aria-labelledby="flow-title">
+  <figcaption id="flow-title">
+    {
+      locale === 'es'
+        ? 'Flujo conceptual: de la captura autorizada a información revisada.'
+        : 'Conceptual flow: from authorized capture to reviewed information.'
+    }
+  </figcaption>
+  <ol>
+    {
+      steps.map(([n, title, detail]) => (
+        <li>
+          <>
+            <span>{n}</span>
+            <strong>{title}</strong>
+            <small>{detail}</small>
+          </>
+        </li>
+      ))
+    }
+  </ol>
+</figure>
+<style>
+  .flow {
+    margin: 3rem 0;
+    padding: clamp(1.25rem, 4vw, 2.5rem);
+    background: var(--forest-900);
+    border-radius: var(--radius-lg);
+    color: var(--white);
+  }
+  figcaption {
+    margin-bottom: 1.5rem;
+    font-weight: 700;
+  }
+  ol {
+    display: grid;
+    margin: 0;
+    padding: 0;
+    list-style: none;
+    gap: 1px;
+    background: rgb(255 255 255 / 18%);
+  }
+  li {
+    position: relative;
+    display: grid;
+    gap: 0.35rem;
+    padding: 1.25rem;
+    background: var(--forest-900);
+  }
+  li span {
+    color: var(--lime-300);
+    font: 700 0.75rem var(--font-mono);
+  }
+  li small {
+    color: rgb(255 255 255 / 70%);
+  }
+  @media (min-width: 55rem) {
+    ol {
+      grid-template-columns: repeat(5, 1fr);
+    }
+    li:not(:last-child)::after {
+      content: '→';
+      position: absolute;
+      right: -0.6rem;
+      top: 50%;
+      z-index: 2;
+      color: var(--lime-300);
+    }
+  }
+</style>

@@ -1,0 +1,75 @@
+---
+import BaseLayout from './BaseLayout.astro';
+import StatusBadge from '@/components/ui/StatusBadge.astro';
+import Tag from '@/components/ui/Tag.astro';
+import type { Locale } from '@/i18n/routes';
+interface Props {
+  locale: Locale;
+  title: string;
+  description: string;
+  alternate: string;
+  stage: 'research';
+  tags: string[];
+  image: string;
+  imageAlt: string;
+}
+const { locale, title, description, alternate, stage, tags, image, imageAlt } = Astro.props;
+---
+
+<BaseLayout
+  {locale}
+  title={`${title} | Hola Mundo Verde`}
+  {description}
+  routeKey="projects"
+  {alternate}
+  image={locale === 'es' ? '/images/og/og-coast-es.png' : '/images/og/og-coast-en.png'}
+  imageAlt={title}
+>
+  <header class="project-hero">
+    <div class="container grid-2">
+      <div class="stack">
+        <StatusBadge {stage} {locale} /><h1>{title}</h1><p class="lead">{description}</p><div
+          class="cluster"
+        >
+          {tags.slice(0, 3).map((tag) => <Tag label={tag} />)}
+        </div>
+      </div>
+      <figure>
+        <img src={image} alt={imageAlt} width="1536" height="1024" /><figcaption>
+          {
+            locale === 'es'
+              ? 'Visual conceptual; no representa un sistema desplegado.'
+              : 'Conceptual visual; it does not represent a deployed system.'
+          }
+        </figcaption>
+      </figure>
+    </div>
+  </header>
+  <div class="container project-body"><slot /></div>
+</BaseLayout>
+<style>
+  .project-hero {
+    padding-block: clamp(3rem, 8vw, 7rem);
+    color: var(--white);
+    background: var(--forest-900);
+  }
+  .project-hero .lead {
+    color: rgb(255 255 255 / 78%);
+  }
+  figure {
+    margin: 0;
+  }
+  figure img {
+    aspect-ratio: 3/2;
+    object-fit: cover;
+    border-radius: var(--radius-lg);
+  }
+  figcaption {
+    margin-top: 0.7rem;
+    color: rgb(255 255 255 / 70%);
+    font-size: 0.85rem;
+  }
+  .project-body {
+    padding-block: clamp(4rem, 9vw, 8rem);
+  }
+</style>

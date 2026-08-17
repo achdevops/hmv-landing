@@ -2,14 +2,25 @@
 
 Carpeta de originales generados y referencias visuales. Los archivos dentro de media/ no deben usarse automáticamente como evidencia de proyectos reales.
 
+## Marca e iconos
+
+- [Logo reformulado y reglas](brand/README.md)
+- [Iconos individuales de áreas](icons/README.md)
+- Isotipo: brand/logo-hmv-isotype-v1.png
+- Logo horizontal: brand/logo-hmv-horizontal-v1.png
+- Green Solutions: icons/icon-green-solutions-v1.png
+- AI for Green: icons/icon-ai-for-green-v1.png
+- Innovation Lab: icons/icon-innovation-lab-v1.png
+- Education: icons/icon-education-v1.png
+
 ## Orden de generación
 
 | Orden | Archivo | Prioridad | Uso | Método | Estado |
 |---:|---|---|---|---|---|
-| 01 | 01-hero-home-greentech.png | P0 | Hero de Home | ImageGen raster | en generación |
-| 02 | 02-project-coast-hero.png | P0 | Hero y card del proyecto costero | ImageGen raster | pendiente |
-| 03 | 03-learning-workshops.png | P1 | Sección Learn | ImageGen raster | pendiente |
-| 04 | 04-about-maldonado-lab.png | P1 | About/CTA institucional | ImageGen raster | pendiente |
+| 01 | 01-hero-home-greentech.png | P0 | Hero de Home | ImageGen raster | generado · revisión pendiente |
+| 02 | 02-project-coast-hero.png | P0 | Hero y card del proyecto costero | ImageGen raster | generado · revisión pendiente |
+| 03 | 03-learning-workshops.png | P1 | Sección Learn | ImageGen raster | generado · revisión pendiente |
+| 04 | 04-about-maldonado-lab.png | P1 | About/CTA institucional | ImageGen raster | generado · revisión pendiente |
 | 05 | 05-sports-private-abstract.png | P2 | Teaser deportivo, solo con aprobación PI | ImageGen abstracto | bloqueado por PI |
 | 06 | og-home-es.png | P1 | Preview social Home ES | Composición HTML/SVG + export | pendiente |
 | 07 | og-home-en.png | P1 | Preview social Home EN | Composición HTML/SVG + export | pendiente |
@@ -60,11 +71,39 @@ Uso: alt ES “Visual conceptual de observación costera mediante captura aérea
 
 ## 03 — Learn
 
-Una escena editorial de taller pequeño y diverso, sin rostros protagonistas ni logos, con mesa de prototipado, tarjetas de ideas, sensor genérico y visuales de energía. Se genera después de validar el look de 01 y 02.
+Prompt de producción:
+
+~~~text
+Use case: photorealistic-natural
+Asset type: landing page Learn section image
+Primary request: escena editorial auténtica de un pequeño taller introductorio GreenTech donde un grupo reducido aprende mediante conversación y prototipado
+Scene/backdrop: espacio luminoso y sencillo de laboratorio comunitario, mesa de madera con tarjetas de ideas, notebook sin marca, sensor ambiental genérico, pequeño módulo solar educativo y cuaderno
+Subject: tres o cuatro adultos diversos colaborando alrededor de la mesa, encuadrados principalmente desde hombros o manos, sin una persona protagonista y sin rostros claramente identificables
+Style/medium: fotografía editorial natural, realista, textura humana y materiales cotidianos, no stock corporativo
+Composition/framing: horizontal amplio para sección web, grupo hacia el centro-derecha y margen respirable; acciones naturales, manos interactuando con el prototipo
+Lighting/mood: luz natural cálida y suave, curiosidad, aprendizaje y colaboración
+Color palette: off-white, madera, forest green y acentos lime discretos
+Constraints: sin texto legible, sin logos, sin marcas de agua, sin certificados, sin escenario de conferencia, sin pantallas futuristas, sin afirmar que es un taller ya realizado por HMV; debe funcionar como imagen conceptual editorial
+Avoid: poses mirando a cámara, apretones de manos, oficina corporativa genérica, exceso de plantas, iluminación artificial azul, estética publicitaria
+~~~
 
 ## 04 — About
 
-Una composición humana y abstracta sobre experimentación familiar en Maldonado: manos construyendo un pequeño prototipo junto a mapas y notas, sin identificar integrantes. Evitar stock corporativo.
+Prompt de producción:
+
+~~~text
+Use case: photorealistic-natural
+Asset type: About section editorial image
+Primary request: imagen íntima y auténtica de experimentación familiar en un pequeño GreenTech Lab de Maldonado, mostrada sin identificar a sus integrantes
+Scene/backdrop: mesa doméstica de trabajo junto a una ventana con luz atlántica suave; mapa costero abstracto sin nombres, cuadernos, piezas de sensor genérico, pequeño prototipo electrónico y materiales cotidianos
+Subject: dos pares de manos de personas de generaciones adultas distintas colaborando en el prototipo, señalando notas y conectando componentes; no mostrar rostros
+Style/medium: fotografía editorial natural con realismo cálido, detalle de manos y materiales, no stock corporativo
+Composition/framing: horizontal para sección About, vista ligeramente cenital, foco en la colaboración y el proceso; espacio limpio en un lateral para composición web
+Lighting/mood: tarde luminosa y tranquila, curiosidad, confianza y construcción gradual
+Color palette: off-white, madera natural, forest green, ocean blue apagado y lime muy sutil
+Constraints: sin texto legible, sin logos, sin marcas de agua, sin personas identificables, sin credenciales, sin pantallas con código, sin producto terminado; debe comunicar iniciativa familiar y experimentación, no empresa consolidada
+Avoid: apretón de manos, poses corporativas, laboratorio científico de bata blanca, oficina lujosa, familia posando, estética publicitaria, exceso de decoración ecológica
+~~~
 
 ## 05 — Sports private
 
@@ -83,4 +122,3 @@ No pedir a ImageGen que escriba titulares. Reutilizar fondos aprobados y compone
 - no subir material confidencial;
 - marcar assets conceptuales cuando puedan confundirse con evidencia;
 - revisar licencias y procedencia de cualquier referencia externa.
-

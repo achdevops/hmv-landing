@@ -27,15 +27,17 @@ Un sitio profesional, bilingüe, rápido y ampliable que presente a Hola Mundo V
 13. [12-ROADMAP-BACKLOG-Y-ACEPTACION.md](12-ROADMAP-BACKLOG-Y-ACEPTACION.md)
 14. [brand/ASSETS-Y-BRIEFS.md](brand/ASSETS-Y-BRIEFS.md)
 15. [13-REGISTRO-DE-DECISIONES-Y-PENDIENTES.md](13-REGISTRO-DE-DECISIONES-Y-PENDIENTES.md)
-16. [CODEX-MASTER-PROMPT.md](CODEX-MASTER-PROMPT.md)
+16. [CODEX-FIRST-MVP-PROMPT.md](CODEX-FIRST-MVP-PROMPT.md)
+17. [CODEX-MASTER-PROMPT.md](CODEX-MASTER-PROMPT.md)
 
 ## Cómo usarlo con Codex
 
-1. Copiar la carpeta docs al repositorio nuevo holamundoverde-web.
-2. Abrir ese repositorio como espacio de trabajo.
-3. Entregar a Codex el contenido de CODEX-MASTER-PROMPT.md.
-4. Pedir ejecución por hitos y aprobar las decisiones abiertas antes de producción.
-5. No conectar el formulario a credenciales reales hasta haber verificado dominio, remitente, destinatario y política de privacidad.
+1. Abrir este repositorio como espacio de trabajo.
+2. Para construir primero el sitio estático revisable, entregar a Codex el contenido de CODEX-FIRST-MVP-PROMPT.md.
+3. Revisar los assets disponibles y sus prompts en media/README.md.
+4. Usar CODEX-MASTER-PROMPT.md para completar integraciones y hardening por hitos.
+5. Aprobar las decisiones abiertas antes de producción.
+6. No conectar el formulario a credenciales reales hasta haber verificado dominio, remitente, destinatario y política de privacidad.
 
 ## Fuentes técnicas oficiales verificadas
 
@@ -52,4 +54,3 @@ Un sitio profesional, bilingüe, rápido y ampliable que presente a Hola Mundo V
 - La arquitectura no expone claves de Mailgun ni Turnstile.
 - El backlog contiene criterios verificables, no adjetivos subjetivos.
 - El prompt maestro puede entregarse a Codex sin depender de la conversación original.
-

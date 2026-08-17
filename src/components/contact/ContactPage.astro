@@ -1,0 +1,91 @@
+---
+import BaseLayout from '@/layouts/BaseLayout.astro';
+import ContactForm from './ContactForm.astro';
+import { route, type Locale } from '@/i18n/routes';
+const { locale } = Astro.props as { locale: Locale };
+const title = locale === 'es' ? 'Contacto | Hola Mundo Verde' : 'Contact | Hola Mundo Verde';
+const description =
+  locale === 'es'
+    ? 'Comparte un desafío, recurso o idea de colaboración con Hola Mundo Verde.'
+    : 'Share a challenge, resource or collaboration idea with Hola Mundo Verde.';
+---
+
+<BaseLayout
+  {locale}
+  {title}
+  {description}
+  routeKey="contact"
+  alternate={route('contact', locale === 'es' ? 'en' : 'es')}
+>
+  <header class="page-hero">
+    <div class="container">
+      <p class="eyebrow">{locale === 'es' ? 'Contacto responsable' : 'Responsible contact'}</p><h1>
+        {locale === 'es' ? 'Cuéntanos qué quieres explorar' : 'Tell us what you want to explore'}
+      </h1><p class="lead">
+        {
+          locale === 'es'
+            ? 'Comparte el contexto suficiente para entender la conversación. No envíes información confidencial, secretos comerciales, credenciales ni datos personales sensibles.'
+            : 'Share enough context for us to understand the conversation. Do not send confidential information, trade secrets, credentials or sensitive personal data.'
+        }
+      </p>
+    </div>
+  </header>
+  <section class="section">
+    <div class="container contact-grid">
+      <aside>
+        <h2>{locale === 'es' ? 'Una conversación concreta' : 'A concrete conversation'}</h2><p>
+          {
+            locale === 'es'
+              ? 'Puedes proponer un piloto, una colaboración técnica, investigación, un taller o apoyo para un proyecto.'
+              : 'You can propose a pilot, technical collaboration, research, a workshop or project support.'
+          }
+        </p><p>
+          {locale === 'es' ? 'Alternativa por email' : 'Email alternative'}:<br /><a
+            href="mailto:hola@holamundoverde.com">hola@holamundoverde.com</a
+          >
+        </p><p class="note">
+          {
+            locale === 'es'
+              ? 'No aceptamos propuestas confidenciales mediante el formulario público.'
+              : 'We do not accept confidential proposals through the public form.'
+          }
+        </p>
+      </aside><div class="form-surface"><ContactForm {locale} /></div>
+    </div>
+  </section>
+</BaseLayout>
+<style>
+  .page-hero {
+    padding-block: clamp(4rem, 9vw, 7rem);
+    background: var(--sand-200);
+  }
+  .contact-grid {
+    display: grid;
+    gap: 3rem;
+  }
+  .contact-grid aside p {
+    margin-top: 1.25rem;
+    color: var(--slate-600);
+  }
+  .note {
+    padding: 1rem;
+    border-left: 4px solid var(--lime-300);
+    background: var(--white);
+  }
+  .form-surface {
+    padding: clamp(1.25rem, 4vw, 2.5rem);
+    background: var(--white);
+    border: 1px solid rgb(20 33 29 / 14%);
+    border-radius: var(--radius-md);
+  }
+  @media (min-width: 55rem) {
+    .contact-grid {
+      grid-template-columns: 0.75fr 1.25fr;
+      align-items: start;
+    }
+    .contact-grid aside {
+      position: sticky;
+      top: 2rem;
+    }
+  }
+</style>

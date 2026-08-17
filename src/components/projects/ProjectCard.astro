@@ -1,0 +1,90 @@
+---
+import type { CollectionEntry } from 'astro:content';
+import type { Locale } from '@/i18n/routes';
+import StatusBadge from '@/components/ui/StatusBadge.astro';
+import Tag from '@/components/ui/Tag.astro';
+interface Props {
+  project: CollectionEntry<'projects'>;
+  locale: Locale;
+}
+const { project, locale } = Astro.props;
+const data = project.data;
+const isPublic = data.visibility === 'public';
+const href = isPublic
+  ? `/${locale}/${locale === 'es' ? 'proyectos' : 'projects'}/${data.slugs[locale]}/`
+  : undefined;
+---
+
+<article class:list={['project-card', { 'project-card--teaser': !isPublic }]}>
+  {
+    isPublic && data.heroImage && (
+      <img src={data.heroImage} alt="" width="1536" height="1024" loading="lazy" />
+    )
+  }
+  <div class="card-content">
+    <StatusBadge stage={isPublic ? data.stage : 'private'} {locale} />
+    <h3>{data.title[locale]}</h3><p>{data.summary[locale]}</p>
+    <div class="cluster">{data.tags.slice(0, 3).map((tag) => <Tag label={tag} />)}</div>
+    {
+      href ? (
+        <a class="card-link" href={href}>
+          {locale === 'es' ? 'Explorar el proyecto' : 'Explore the project'}{' '}
+          <span aria-hidden="true">→</span>
+        </a>
+      ) : (
+        <p class="notice">
+          {locale === 'es'
+            ? 'Sin página pública · Información limitada'
+            : 'No public page · Limited information'}
+        </p>
+      )
+    }
+  </div>
+</article>
+<style>
+  .project-card {
+    overflow: hidden;
+    background: var(--white);
+    border: 1px solid rgb(20 33 29 / 14%);
+    border-radius: var(--radius-md);
+  }
+  .project-card img {
+    width: 100%;
+    aspect-ratio: 16/9;
+    object-fit: cover;
+  }
+  .card-content {
+    padding: clamp(1.25rem, 3vw, 2rem);
+  }
+  h3 {
+    margin-top: 1rem;
+  }
+  p {
+    margin-top: 0.85rem;
+    color: var(--slate-600);
+  }
+  .cluster {
+    margin-top: 1.25rem;
+  }
+  .card-link {
+    display: inline-block;
+    margin-top: 1.5rem;
+    font-weight: 750;
+  }
+  .project-card--teaser {
+    display: grid;
+    min-height: 100%;
+    place-items: center;
+    background: linear-gradient(145deg, var(--forest-900), var(--forest-700));
+    color: var(--white);
+  }
+  .project-card--teaser p {
+    color: rgb(255 255 255 / 75%);
+  }
+  .project-card--teaser :global(.tag) {
+    border-color: rgb(255 255 255 / 30%);
+  }
+  .notice {
+    font: 600 0.78rem/1.4 var(--font-mono);
+  }
+</style>
