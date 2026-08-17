@@ -39,6 +39,8 @@ Desktop:
 
 Logo · Proyectos · Capacidades · Lab · Aprender · Colaborar · Nosotros · ES/EN · Contacto
 
+El lockup de escritorio muestra `holaMundoVerde` en camel case y el descriptor `GreenTech Innovation Lab`. En móvil estrecho puede ocultarse solo el descriptor.
+
 En anchos limitados, priorizar:
 
 Logo · Proyectos · Colaborar · ES/EN · Menú
@@ -59,22 +61,41 @@ Objetivo: explicar HMV en cinco segundos.
 
 Contenido:
 
-- eyebrow: GreenTech Innovation Lab;
-- titular de acción;
-- propuesta de valor;
+- eyebrow: holaMundoVerde · GreenTech Innovation Lab;
+- titular centrado en investigación, formación y transición sostenible;
+- propuesta de valor que declare iniciativa familiar, sin presentarla como consultora consolidada;
 - CTA “Explorar proyectos”;
 - CTA “Colaborar”;
 - visual GreenTech con costa, datos y nodos; no mostrar un producto terminado.
 
-### 3.2 Prueba de identidad
+### 3.2 Perspectiva de marca
 
-Texto breve sobre iniciativa familiar y método. No mostrar perfiles personales.
+Texto breve sobre iniciativa familiar, origen de `holaMundoVerde` y método. Acompañar con la imagen conceptual de mesa, sensores y territorio; no mostrar perfiles personales.
 
-### 3.3 Capacidades activas
+### 3.3 Por qué GreenTech ahora
 
-Cuatro tarjetas: Cloud, IA & Data, IoT, Education. Cada una enlaza a Capabilities o Learn.
+Bloque editorial que explica:
 
-### 3.4 Proyecto flagship
+- que IA, Cloud y tokenización dependen de centros de datos, redes y dispositivos físicos;
+- que la huella depende de energía, intensidad de carbono, hardware y arquitectura;
+- que tokenizar puede aportar trazabilidad o incentivos, pero no garantiza sostenibilidad;
+- que las organizaciones necesitan tres prácticas: medir, diseñar y formar;
+- que una cifra temporal debe enlazar una fuente primaria y mostrar su año.
+
+Usar el visual de infraestructura digital y renovables. No usar monedas, símbolos cripto, dashboards inventados ni claims de “cero carbono”.
+
+### 3.4 Áreas de trabajo
+
+Cuatro tarjetas con nombres comprensibles para organizaciones:
+
+1. Infraestructura digital sostenible — Cloud, eficiencia y observabilidad.
+2. IA & datos para sostenibilidad — modelos, datos y revisión humana.
+3. Investigación aplicada — IoT, sensores y prototipos.
+4. Formación GreenTech — lenguaje, criterios y prácticas.
+
+La tecnología habilitante sigue siendo Cloud + IA/Data + IoT + Education, pero la interfaz prioriza el propósito. Cada área enlaza a Capabilities o Learn.
+
+### 3.5 Proyecto flagship
 
 Bloque dominante para monitoreo costero:
 
@@ -86,29 +107,32 @@ Bloque dominante para monitoreo costero:
 
 No mostrar dashboards inventados como evidencia. Un mockup debe marcarse “Vista conceptual”.
 
-### 3.5 Otros experimentos
+### 3.6 Otros experimentos
 
 Teaser deportivo minimalista con etiqueta “Private exploration / Exploración reservada”. Sin detalles.
 
-### 3.6 Método
+### 3.7 Método
 
 Research → Prototype → Pilot → MVP. Explicar que no todo experimento se convierte en producto.
 
-### 3.7 Educación
+### 3.8 Formación
 
 Presentar talleres previstos, no celebrados:
 
 - GreenTech Labs: de la idea al experimento;
 - cultura y fundamentos de tokenización de energías renovables;
 - IA, Cloud e IoT para desafíos sostenibles.
+- huella física del software y la infraestructura digital.
 
-### 3.8 Colaboración
+La imagen debe estar etiquetada como conceptual para no implicar que el taller ya ocurrió.
+
+### 3.9 Colaboración
 
 Mostrar aportes concretos: sitio piloto, datos, investigación, cloud credits, hardware, drones, mentores, financiación.
 
-### 3.9 CTA final
+### 3.10 CTA final
 
-Una sola pregunta: “¿Hay un desafío que podríamos explorar juntos?”
+Una sola pregunta: “¿Qué pilar sostenible necesita fortalecer tu organización?”
 
 ## 4. Capabilities
 
@@ -291,4 +315,3 @@ Estados:
 - no hay modales promocionales;
 - el formulario preserva los valores tras un error recuperable;
 - el éxito no promete tiempo de respuesta no acordado.
-

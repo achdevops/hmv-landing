@@ -2,12 +2,16 @@
 
 Assets conceptuales generados a partir de la plantilla UI/UX de referencia. Son PNG con transparencia real y están listos para prototipo web. Antes de registrar la marca o producir impresos, conviene redibujar el concepto aprobado como SVG vectorial.
 
+## Nombre oficial
+
+La firma pública se escribe **holaMundoVerde**, unida y en camel case. El lockup raster inicial conserva “Hola Mundo Verde” por limitaciones de su primera generación y no debe considerarse master tipográfico. En interfaz web usar el isotipo junto a un wordmark HTML exacto `holaMundoVerde` y el descriptor independiente `GreenTech Innovation Lab`.
+
 ## Archivos
 
 | Archivo | Dimensiones | Uso recomendado |
 |---|---:|---|
 | logo-hmv-isotype-v1.png | 1290 × 1219 | favicon source, avatar, marca compacta |
-| logo-hmv-horizontal-v1.png | 2172 × 724 | header, footer, presentaciones |
+| logo-hmv-horizontal-v1.png | 2172 × 724 | referencia conceptual y presentaciones; no usar como firma final del sitio |
 
 ## Concepto
 
@@ -60,6 +64,6 @@ Avoid: curved text, decorative font, condensed font, tiny unreadable subtitle, g
 - No usar el lockup horizontal por debajo de 180 px de ancho.
 - En tamaños pequeños usar el isotipo.
 - No convertir este PNG en master de impresión.
+- No usar el texto raster “Hola Mundo Verde” como versión oficial del wordmark camel case.
 - Validar la marca en monocromo antes de cerrar el SVG definitivo.
 - Realizar búsqueda de similitud y revisión legal antes de registrar.
-

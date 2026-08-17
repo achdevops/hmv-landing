@@ -12,7 +12,17 @@ Evitar la estética genérica de ONG verde, el exceso de hojas, el neón “IA�
 
 ## 2. Concepto de identidad
 
-Idea recomendada para explorar en el nuevo logo: un símbolo modular que combine horizonte/onda, brote y nodo de datos. Debe leerse primero como HMV y funcionar a 16 px.
+La firma verbal oficial es **holaMundoVerde**, unida y en camel case: `hola` en minúscula, `Mundo` y `Verde` con mayúscula inicial. No usar “Hola Mundo Verde” como nombre principal en navegación, títulos, metadatos ni firmas. El descriptor **GreenTech Innovation Lab** siempre se escribe separado y con esa capitalización.
+
+Jerarquía del lockup:
+
+1. isotipo;
+2. wordmark `holaMundoVerde`;
+3. descriptor `GreenTech Innovation Lab` en un segundo nivel, nunca como parte del nombre.
+
+El isotipo actual comunica naturaleza, circuito y costa de forma reconocible y funciona bien desde 32–48 px. A 16–24 px conserva demasiados detalles, por lo que el favicon debe usar una simplificación vectorial específica. En el header del MVP se combina el isotipo con un wordmark HTML: mejora nitidez, accesibilidad, traducción y control responsive. El PNG horizontal queda reservado para piezas sociales o presentaciones, no para tamaños pequeños.
+
+El concepto definitivo debe mantener un símbolo modular que combine horizonte/onda, brote y nodo de datos. Debe funcionar en monocromo y no depender de que el público interprete las iniciales HMV.
 
 Entregables mínimos:
 
@@ -26,6 +36,15 @@ Entregables mínimos:
 - prueba sobre fondo claro, oscuro y fotografía.
 
 No generar una marca basada solo en una hoja dentro de un círculo.
+
+### 2.1 Reglas de marca en interfaz
+
+- mostrar `holaMundoVerde` como una unidad, sin salto entre las tres palabras;
+- usar color para reforzar `Verde`, sin que el color sea necesario para comprender el nombre;
+- mantener visible `GreenTech Innovation Lab` en cabecera de escritorio y footer;
+- ocultar el descriptor, no el wordmark, cuando el ancho móvil sea muy reducido;
+- no usar “HMV” como nombre de cara al público sin haber presentado antes la marca completa;
+- etiquetar como conceptuales las imágenes generadas que puedan confundirse con actividad realizada.
 
 ## 3. Paleta propuesta
 
@@ -147,6 +166,18 @@ Reglas:
 - no insertar texto importante dentro de imágenes;
 - registrar autor, licencia y fecha.
 
+Mapa narrativo del MVP:
+
+| Asset | Función | Tratamiento |
+|---|---|---|
+| costa + datos | territorio e investigación | hero amplio, decorativo |
+| mesa familiar + sensores | origen y método | fotografía conceptual con caption |
+| centro de datos + renovables | huella física de lo digital | pieza editorial con fuente externa |
+| taller + prototipo solar | formación y transferencia | fotografía conceptual con caption |
+| costa + dron | proyecto flagship | visual conceptual, nunca evidencia |
+
+No llenar espacios con ilustración decorativa sin propósito. Cada imagen debe aportar una de estas funciones: contexto, explicación, evidencia o ritmo. En el MVP las piezas generadas cumplen contexto o explicación; ninguna prueba que una actividad haya ocurrido.
+
 ## 9. Voz visual
 
 Usar espacio en blanco, diagramas simples, fotografías amplias y pequeños detalles de datos. La identidad debe poder convivir con proyectos distintos sin que cada uno parezca otra marca.
@@ -160,5 +191,4 @@ Usar espacio en blanco, diagramas simples, fotografías amplias y pequeños deta
 - el foco es visible en todos los controles;
 - las combinaciones de texto pasan contraste;
 - se entrega un template Open Graph de 1200 × 630.
-
 

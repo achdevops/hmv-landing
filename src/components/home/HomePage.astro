@@ -3,214 +3,348 @@ import { getCollection } from 'astro:content';
 import Button from '@/components/ui/Button.astro';
 import ProjectCard from '@/components/projects/ProjectCard.astro';
 import { route, type Locale } from '@/i18n/routes';
+
 const { locale } = Astro.props as { locale: Locale };
 const projects = (await getCollection('projects')).sort((a, b) => a.data.order - b.data.order);
+
 const c =
   locale === 'es'
     ? {
-        eyebrow: 'GreenTech Innovation Lab',
-        h1: 'Exploramos ideas. Construimos prototipos. Generamos impacto.',
-        lead: 'Combinamos inteligencia artificial, Cloud, IoT y educación para investigar desafíos ambientales, probar soluciones y construir alianzas con propósito.',
-        aboutTitle: 'Una iniciativa familiar con método de laboratorio',
+        eyebrow: 'holaMundoVerde · GreenTech Innovation Lab',
+        h1: 'Investigamos tecnología. Formamos capacidades. Diseñamos transiciones sostenibles.',
+        lead: 'Somos una iniciativa familiar de investigación y formación. Conectamos IA, infraestructura digital, IoT y cultura GreenTech para que más organizaciones puedan innovar con evidencia y una visión responsable de su impacto.',
+        aboutTitle: 'Del primer código a una cultura tecnológica más consciente',
         about:
-          'holaMundoVerde une el “holaMundo” con el que tantas personas damos nuestros primeros pasos en código y “Verde”, nuestro compromiso con aplicar esa curiosidad a desafíos sostenibles. Crecemos como una iniciativa familiar: trabajamos por etapas, documentamos lo aprendido y buscamos organizaciones que quieran investigar, probar o enseñar junto a nosotros.',
-        capsTitle: 'Tecnología aplicada con un foco claro',
+          'holaMundoVerde une “holaMundo”, el primer saludo de quienes aprendemos a programar, con “Verde”, la decisión de orientar esa curiosidad hacia desafíos sostenibles. Trabajamos por etapas, documentamos lo aprendido y abrimos espacio para investigar, prototipar y enseñar junto a otras organizaciones.',
+        aboutAlt:
+          'Manos de dos personas trabajando con sensores y un mapa costero en una mesa de laboratorio.',
+        whyTitle: 'La innovación digital también tiene una huella física',
+        whyLead:
+          'IA, Cloud y sistemas tokenizados funcionan sobre centros de datos, redes y dispositivos que consumen energía y materiales. Sumar GreenTech desde el inicio permite convertir esa realidad en una variable de diseño y decisión.',
+        whyBody:
+          'Tokenizar puede aportar trazabilidad, coordinación e incentivos, pero no vuelve sostenible un sistema por sí mismo. Importan la arquitectura, la red elegida, el volumen de cómputo, la vida útil del hardware y la energía que alimenta cada servicio.',
+        whyAlt:
+          'Visual conceptual de un centro de datos conectado con energía eólica, solar y una costa.',
+        whyPoints: [
+          ['Medir', 'Observar energía, intensidad de carbono y uso de infraestructura.'],
+          ['Diseñar', 'Ajustar cómputo, datos y hardware al valor real que generan.'],
+          ['Formar', 'Dar a los equipos criterios para decidir y mejorar de manera continua.'],
+        ],
+        evidence:
+          'La IEA proyecta que el consumo eléctrico mundial de los centros de datos podría más que duplicarse hacia 2030. No es una razón para frenar la innovación: es una razón para diseñarla mejor.',
+        evidenceLink: 'Consultar Energy and AI · IEA',
+        capsTitle: 'Cuatro pilares para investigar y aprender',
         capsLead:
-          'Estas son las capacidades que hoy conectamos en proyectos y espacios de aprendizaje.',
+          'No son silos tecnológicos: son perspectivas que combinamos según la pregunta, el contexto y la evidencia disponible.',
         caps: [
           [
-            'Cloud',
-            'Bases técnicas para experimentar, procesar datos y hacer crecer soluciones de forma responsable.',
+            'Infraestructura digital sostenible',
+            'Cloud, arquitectura y observabilidad con criterios de eficiencia, seguridad, costo y huella operativa.',
             '/images/icons/green-solutions.png',
           ],
           [
-            'IA & datos',
-            'Visión computacional, análisis y automatización para convertir datos en información útil.',
+            'IA & datos para sostenibilidad',
+            'Visión computacional, análisis y automatización con revisión humana y datos responsables.',
             '/images/icons/ai-for-green.png',
           ],
           [
-            'IoT',
-            'Sensores y fuentes de campo conectados con sistemas de observación y análisis.',
+            'Investigación aplicada',
+            'IoT, sensores y prototipos para convertir preguntas del territorio en aprendizaje verificable.',
             '/images/icons/innovation-lab.png',
           ],
           [
-            'Educación',
-            'Talleres para compartir fundamentos, prácticas y nuevas preguntas sobre GreenTech.',
+            'Formación GreenTech',
+            'Talleres para incorporar lenguaje, criterios y prácticas sostenibles en los equipos.',
             '/images/icons/education.png',
           ],
         ],
-        work: 'Lo que estamos explorando',
+        work: 'Investigación en curso',
         method: 'De una pregunta a un piloto medible',
         steps: [
-          ['Research', 'Entendemos el problema, datos, restricciones y personas.'],
+          ['Research', 'Comprendemos el problema, los datos, el impacto y las personas.'],
           ['Prototype', 'Construimos la prueba mínima que permita aprender.'],
           ['Pilot', 'Probamos con un partner y criterios acordados.'],
-          ['MVP', 'Consolidamos lo que demostró valor y decidimos.'],
+          ['MVP', 'Consolidamos lo que demostró valor y decidimos cómo avanzar.'],
         ],
-        learnTitle: 'Aprender también es construir impacto',
+        learnTitle: 'La sostenibilidad también se aprende',
         learn:
-          'Preparamos talleres sobre GreenTech Labs, aplicaciones responsables de IA, Cloud e IoT, y cultura de tokenización de energías renovables.',
-        final: '¿Hay un desafío que podríamos explorar juntos?',
+          'Preparamos talleres sobre GreenTech Labs, software e infraestructura digital responsable, aplicaciones de IA e IoT y cultura de tokenización de energías renovables.',
+        learnNote:
+          'Contenido educativo y cultural. La tokenización se aborda con mirada crítica y no constituye asesoramiento financiero, legal ni de inversión.',
+        learnAlt:
+          'Grupo pequeño trabajando con un sensor ambiental y un módulo solar en una mesa de taller.',
+        final: '¿Qué pilar sostenible necesita fortalecer tu organización?',
         finalBody:
-          'Cuéntanos qué problema observas, qué recursos puedes aportar o qué colaboración imaginas.',
+          'Podemos explorar una pregunta de investigación, un prototipo, un espacio formativo o una colaboración concreta.',
       }
     : {
-        eyebrow: 'GreenTech Innovation Lab',
-        h1: 'We explore ideas. We build prototypes. We create impact.',
-        lead: 'We combine artificial intelligence, Cloud, IoT and education to investigate environmental challenges, test solutions and build purpose-driven partnerships.',
-        aboutTitle: 'A family-led initiative with a lab method',
+        eyebrow: 'holaMundoVerde · GreenTech Innovation Lab',
+        h1: 'We research technology. We build capabilities. We design sustainable transitions.',
+        lead: 'We are a family-led research and learning initiative. We connect AI, digital infrastructure, IoT and GreenTech culture so more organizations can innovate with evidence and a responsible view of their impact.',
+        aboutTitle: 'From the first line of code to a more conscious technology culture',
         about:
-          'holaMundoVerde brings together “helloWorld”, where so many of us take our first steps in code, and “Verde”, our commitment to applying that curiosity to sustainability challenges. We grow as a family-led initiative: working in stages, documenting what we learn and seeking organizations willing to research, test or teach alongside us.',
-        capsTitle: 'Applied technology with a clear focus',
+          'holaMundoVerde brings together “helloWorld”, the first greeting for many people learning to code, and “Verde”, our decision to direct that curiosity toward sustainability challenges. We work in stages, document what we learn and create space to research, prototype and teach alongside other organizations.',
+        aboutAlt: 'Two people working with sensors and a coastal map at a small laboratory table.',
+        whyTitle: 'Digital innovation also has a physical footprint',
+        whyLead:
+          'AI, Cloud and tokenized systems run on data centers, networks and devices that consume energy and materials. Bringing GreenTech in from the start turns that reality into a design and decision variable.',
+        whyBody:
+          'Tokenization can support traceability, coordination and incentives, but it does not make a system sustainable by itself. Architecture, network choice, compute volume, hardware lifespan and the energy behind each service all matter.',
+        whyAlt:
+          'Conceptual visual of a data center connected to wind, solar and a coastal landscape.',
+        whyPoints: [
+          ['Measure', 'Observe energy, carbon intensity and infrastructure use.'],
+          ['Design', 'Align compute, data and hardware with the value they actually create.'],
+          ['Learn', 'Give teams the criteria to decide and improve continuously.'],
+        ],
+        evidence:
+          'The IEA projects that global data-center electricity use could more than double by 2030. That is not a reason to stop innovation; it is a reason to design it better.',
+        evidenceLink: 'Explore Energy and AI · IEA',
+        capsTitle: 'Four pillars for research and learning',
         capsLead:
-          'These are the capabilities we currently connect across projects and learning spaces.',
+          'These are not technology silos: they are perspectives we combine according to the question, context and available evidence.',
         caps: [
           [
-            'Cloud',
-            'Technical foundations to experiment, process data and grow solutions responsibly.',
+            'Sustainable digital infrastructure',
+            'Cloud, architecture and observability guided by efficiency, security, cost and operational-footprint criteria.',
             '/images/icons/green-solutions.png',
           ],
           [
-            'AI & data',
-            'Computer vision, analytics and automation to turn data into useful information.',
+            'AI & data for sustainability',
+            'Computer vision, analytics and automation with human review and responsible data practices.',
             '/images/icons/ai-for-green.png',
           ],
           [
-            'IoT',
-            'Sensors and field sources connected to observation and analysis systems.',
+            'Applied research',
+            'IoT, sensors and prototypes that turn questions from the field into verifiable learning.',
             '/images/icons/innovation-lab.png',
           ],
           [
-            'Education',
-            'Workshops sharing foundations, practices and new questions about GreenTech.',
+            'GreenTech learning',
+            'Workshops that build shared language, criteria and sustainable practices across teams.',
             '/images/icons/education.png',
           ],
         ],
-        work: 'What we are exploring',
+        work: 'Research in progress',
         method: 'From a question to a measurable pilot',
         steps: [
-          ['Research', 'We understand the problem, data, constraints and people.'],
+          ['Research', 'We understand the problem, data, impact and people.'],
           ['Prototype', 'We build the smallest proof that can produce learning.'],
           ['Pilot', 'We test with a partner and agreed criteria.'],
-          ['MVP', 'We consolidate what demonstrated value and decide.'],
+          ['MVP', 'We consolidate what demonstrated value and decide how to move forward.'],
         ],
-        learnTitle: 'Learning also creates impact',
+        learnTitle: 'Sustainability is also something we learn',
         learn:
-          'We are preparing workshops on GreenTech Labs, responsible applications of AI, Cloud and IoT, and renewable-energy tokenization culture.',
-        final: 'Is there a challenge we could explore together?',
+          'We are preparing workshops on GreenTech Labs, responsible software and digital infrastructure, applied AI and IoT, and renewable-energy tokenization culture.',
+        learnNote:
+          'Educational and cultural content. Tokenization is approached critically and does not constitute financial, legal or investment advice.',
+        learnAlt:
+          'Small group working with an environmental sensor and a solar module around a workshop table.',
+        final: 'Which sustainability capability does your organization need to strengthen?',
         finalBody:
-          'Tell us what problem you observe, what resources you can contribute or what collaboration you imagine.',
+          'We can explore a research question, a prototype, a learning space or a concrete collaboration.',
       };
 ---
 
 <section class="hero">
-  <div class="hero-image" aria-hidden="true"></div><div class="container hero-inner">
+  <div class="hero-image" aria-hidden="true"></div>
+  <div class="container hero-inner">
     <div>
-      <p class="eyebrow">{c.eyebrow}</p><h1>{c.h1}</h1><p class="lead">{c.lead}</p><div
-        class="cluster actions"
-      >
-        <Button href={route('projects', locale)}
-          >{locale === 'es' ? 'Explorar proyectos' : 'Explore projects'}</Button
-        ><Button href={route('collaborate', locale)} variant="secondary"
-          >{locale === 'es' ? 'Colaborar con nosotros' : 'Collaborate with us'}</Button
-        >
+      <p class="eyebrow">{c.eyebrow}</p>
+      <h1>{c.h1}</h1>
+      <p class="lead">{c.lead}</p>
+      <div class="cluster actions">
+        <Button href={route('projects', locale)}>
+          {locale === 'es' ? 'Explorar proyectos' : 'Explore projects'}
+        </Button>
+        <Button href={route('learn', locale)} variant="secondary">
+          {locale === 'es' ? 'Conocer la formación' : 'Explore learning'}
+        </Button>
       </div>
     </div>
   </div>
 </section>
+
 <section class="section intro">
-  <div class="container grid-2">
-    <p class="eyebrow">01 · {locale === 'es' ? 'Quiénes somos' : 'Who we are'}</p><div>
-      <h2>{c.aboutTitle}</h2><p class="lead">{c.about}</p>
+  <div class="container story-grid">
+    <p class="eyebrow">01 · {locale === 'es' ? 'Nuestra perspectiva' : 'Our perspective'}</p>
+    <div>
+      <h2>{c.aboutTitle}</h2>
+      <p class="lead">{c.about}</p>
     </div>
+    <figure class="story-visual">
+      <img
+        src="/images/generated/about-maldonado-lab.webp"
+        alt={c.aboutAlt}
+        width="1400"
+        height="933"
+        loading="lazy"
+      />
+      <figcaption>
+        {
+          locale === 'es'
+            ? 'Imagen conceptual · laboratorio familiar'
+            : 'Conceptual image · family-led lab'
+        }
+      </figcaption>
+    </figure>
   </div>
 </section>
+
+<section class="section why">
+  <div class="container why-grid">
+    <div class="why-copy">
+      <p class="eyebrow">
+        02 · {locale === 'es' ? 'Por qué GreenTech ahora' : 'Why GreenTech now'}
+      </p>
+      <h2>{c.whyTitle}</h2>
+      <p class="lead">{c.whyLead}</p>
+      <p>{c.whyBody}</p>
+      <div class="why-points">
+        {
+          c.whyPoints.map(([title, text], i) => (
+            <article>
+              <span>0{i + 1}</span>
+              <h3>{title}</h3>
+              <p>{text}</p>
+            </article>
+          ))
+        }
+      </div>
+    </div>
+    <figure class="why-visual">
+      <img
+        src="/images/generated/digital-infrastructure-footprint.webp"
+        alt={c.whyAlt}
+        width="1600"
+        height="900"
+        loading="lazy"
+      />
+      <figcaption>
+        <p>{c.evidence}</p>
+        <a
+          href="https://www.iea.org/reports/energy-and-ai/executive-summary"
+          target="_blank"
+          rel="noreferrer">{c.evidenceLink} ↗</a
+        >
+      </figcaption>
+    </figure>
+  </div>
+</section>
+
 <section class="section capabilities">
   <div class="container">
     <div class="section-heading">
       <div>
         <p class="eyebrow">
-          02 · {locale === 'es' ? 'Capacidades activas' : 'Active capabilities'}
-        </p><h2>{c.capsTitle}</h2>
-      </div><p>{c.capsLead}</p>
-    </div><div class="cap-grid">
+          03 · {locale === 'es' ? 'Áreas de trabajo' : 'Areas of work'}
+        </p>
+        <h2>{c.capsTitle}</h2>
+      </div>
+      <p>{c.capsLead}</p>
+    </div>
+    <div class="cap-grid">
       {
-        c.caps.map(([title, text, icon], i) => (
+        c.caps.map(([title, body, icon], i) => (
           <article>
-            <>
-              <div class="cap-meta">
-                <>
-                  <span>0{i + 1}</span>
-                  <img src={icon} alt="" width="256" height="256" />
-                </>
-              </div>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </>
+            <div class="cap-meta">
+              <span>0{i + 1}</span>
+              <img src={icon} alt="" width="256" height="256" loading="lazy" />
+            </div>
+            <h3>{title}</h3>
+            <p>{body}</p>
           </article>
         ))
       }
-    </div><a class="text-link" href={route('capabilities', locale)}
-      >{locale === 'es' ? 'Ver capacidades' : 'View capabilities'} →</a
-    >
+    </div>
+    <a class="text-link" href={route('capabilities', locale)}>
+      {locale === 'es' ? 'Ver capacidades' : 'View capabilities'} →
+    </a>
   </div>
 </section>
+
 <section class="section projects">
   <div class="container">
-    <p class="eyebrow">03 · {c.work}</p><h2>
+    <p class="eyebrow">04 · {c.work}</p>
+    <h2>
       {
         locale === 'es'
           ? 'La costa como territorio de investigación'
           : 'The coast as a field for research'
       }
-    </h2><div class="project-grid">
+    </h2>
+    <div class="project-grid">
       {projects.map((project) => <ProjectCard {project} {locale} />)}
     </div>
   </div>
 </section>
+
 <section class="section method">
   <div class="container">
-    <p class="eyebrow">04 · Lab</p><h2>{c.method}</h2><ol>
+    <p class="eyebrow">05 · Lab</p>
+    <h2>{c.method}</h2>
+    <ol>
       {
-        c.steps.map(([title, text], i) => (
+        c.steps.map(([title, body], i) => (
           <li>
-            <>
-              <span>0{i + 1}</span>
-              <h3>{title}</h3>
-              <p>{text}</p>
-            </>
+            <span>0{i + 1}</span>
+            <h3>{title}</h3>
+            <p>{body}</p>
           </li>
         ))
       }
     </ol>
   </div>
 </section>
+
 <section class="section learn">
-  <div class="container grid-2">
-    <div><p class="eyebrow">05 · Learn</p><h2>{c.learnTitle}</h2></div><div>
-      <p class="lead">{c.learn}</p><p class="open">
+  <div class="container learning-grid">
+    <figure>
+      <img
+        src="/images/generated/learning-workshops.webp"
+        alt={c.learnAlt}
+        width="1600"
+        height="854"
+        loading="lazy"
+      />
+      <figcaption>
+        {
+          locale === 'es'
+            ? 'Imagen conceptual · espacio formativo'
+            : 'Conceptual image · learning space'
+        }
+      </figcaption>
+    </figure>
+    <div>
+      <p class="eyebrow">06 · {locale === 'es' ? 'Formación' : 'Learning'}</p>
+      <h2>{c.learnTitle}</h2>
+      <p class="lead">{c.learn}</p>
+      <p class="learn-note">{c.learnNote}</p>
+      <p class="open">
         {
           locale === 'es'
             ? 'Interés abierto · Fechas por confirmar'
             : 'Interest open · Dates to be confirmed'
         }
-      </p><Button href={`${route('contact', locale)}?interest=workshop`} variant="secondary"
-        >{locale === 'es' ? 'Registrar interés' : 'Register interest'}</Button
-      >
+      </p>
+      <Button href={`${route('contact', locale)}?interest=workshop`} variant="secondary">
+        {locale === 'es' ? 'Registrar interés' : 'Register interest'}
+      </Button>
     </div>
   </div>
 </section>
+
 <section class="section final">
   <div class="container">
-    <p class="eyebrow">06 · {locale === 'es' ? 'Colaborar' : 'Collaborate'}</p><h2>{c.final}</h2><p
-      class="lead"
-    >
-      {c.finalBody}
-    </p><Button href={route('contact', locale)} variant="light"
-      >{locale === 'es' ? 'Iniciar una conversación' : 'Start a conversation'}</Button
-    >
+    <p class="eyebrow">07 · {locale === 'es' ? 'Colaborar' : 'Collaborate'}</p>
+    <h2>{c.final}</h2>
+    <p class="lead">{c.finalBody}</p>
+    <Button href={route('contact', locale)} variant="light">
+      {locale === 'es' ? 'Iniciar una conversación' : 'Start a conversation'}
+    </Button>
   </div>
 </section>
+
 <style>
   .hero {
     position: relative;
@@ -225,8 +359,8 @@ const c =
       linear-gradient(
         90deg,
         var(--cloud-050) 0%,
-        rgb(245 247 242 / 95%) 35%,
-        rgb(245 247 242 / 8%) 70%
+        rgb(245 247 242 / 96%) 38%,
+        rgb(245 247 242 / 12%) 72%
       ),
       url('/images/generated/hero-home-greentech.webp') center/cover;
   }
@@ -238,13 +372,113 @@ const c =
     padding-block: 5rem;
   }
   .hero-inner > div {
-    max-width: 46rem;
+    max-width: 53rem;
+  }
+  .hero h1 {
+    max-width: 20ch;
+    font-size: clamp(2.7rem, 4.3vw, 4.4rem);
+  }
+  .hero .eyebrow {
+    text-transform: none;
+  }
+  .hero .lead {
+    max-width: 62ch;
   }
   .actions {
     margin-top: 2rem;
   }
-  .intro {
+  .intro,
+  .learn {
     background: var(--white);
+  }
+  .story-grid,
+  .why-grid,
+  .learning-grid {
+    display: grid;
+    gap: clamp(2rem, 5vw, 5rem);
+    align-items: center;
+  }
+  .story-grid > .eyebrow {
+    align-self: start;
+  }
+  figure {
+    margin: 0;
+  }
+  .story-visual,
+  .learning-grid figure,
+  .why-visual {
+    overflow: hidden;
+    border-radius: var(--radius-lg);
+    background: var(--sand-200);
+    box-shadow: var(--shadow);
+  }
+  .story-visual img,
+  .learning-grid img,
+  .why-visual img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+  figcaption {
+    padding: 0.8rem 1rem;
+    font: 650 0.72rem/1.45 var(--font-mono);
+  }
+  .story-visual figcaption,
+  .learning-grid figcaption {
+    color: var(--slate-600);
+    background: var(--cloud-050);
+    text-transform: uppercase;
+  }
+  .why {
+    color: var(--white);
+    background: var(--forest-900);
+  }
+  .why .lead,
+  .why-copy > p:not(.eyebrow),
+  .why-points p {
+    color: rgb(255 255 255 / 74%);
+  }
+  .why-copy > p:not(.eyebrow) {
+    margin-top: 1.25rem;
+  }
+  .why-points {
+    display: grid;
+    gap: 1rem;
+    margin-top: 2rem;
+  }
+  .why-points article {
+    padding-top: 1.25rem;
+    border-top: 1px solid rgb(255 255 255 / 20%);
+  }
+  .why-points span,
+  .method li > span {
+    color: var(--lime-300);
+    font: 700 0.75rem var(--font-mono);
+  }
+  .why-points h3 {
+    margin-top: 0.6rem;
+  }
+  .why-points p {
+    margin-top: 0.5rem;
+  }
+  .why-visual {
+    color: var(--ink-900);
+  }
+  .why-visual img {
+    aspect-ratio: 16 / 11;
+  }
+  .why-visual figcaption {
+    padding: 1.4rem;
+    background: var(--white);
+  }
+  .why-visual figcaption p {
+    max-width: none;
+    font: 600 0.93rem/1.55 var(--font-body);
+  }
+  .why-visual figcaption a {
+    display: inline-block;
+    margin-top: 0.75rem;
+    font-weight: 750;
   }
   .section-heading {
     display: grid;
@@ -264,12 +498,9 @@ const c =
     padding: 2rem 0;
     border-bottom: 1px solid rgb(20 33 29 / 18%);
   }
-  .cap-grid span,
-  .method li > span {
-    font: 700 0.75rem var(--font-mono);
-  }
   .cap-grid span {
     color: var(--forest-700);
+    font: 700 0.75rem var(--font-mono);
   }
   .cap-meta {
     display: flex;
@@ -280,10 +511,8 @@ const c =
     width: 4rem;
     height: 4rem;
   }
-  .method li > span {
-    color: var(--lime-300);
-  }
   .cap-grid h3 {
+    max-width: 24ch;
     margin-top: 1.5rem;
   }
   .cap-grid p {
@@ -308,7 +537,7 @@ const c =
   }
   .method {
     color: var(--white);
-    background: var(--forest-900);
+    background: linear-gradient(125deg, var(--forest-900), var(--forest-800));
   }
   .method ol {
     display: grid;
@@ -327,8 +556,18 @@ const c =
     margin-top: 0.6rem;
     color: rgb(255 255 255 / 70%);
   }
-  .learn {
-    background: var(--white);
+  .learning-grid figure {
+    align-self: stretch;
+  }
+  .learning-grid img {
+    height: calc(100% - 2.55rem);
+    min-height: 22rem;
+  }
+  .learn-note {
+    margin-top: 1.25rem;
+    padding-left: 1rem;
+    color: var(--slate-600);
+    border-left: 3px solid var(--lime-300);
   }
   .open {
     margin: 1.5rem 0;
@@ -339,11 +578,24 @@ const c =
     color: var(--white);
     background: linear-gradient(120deg, var(--forest-900), var(--forest-700));
   }
+  .final h2 {
+    max-width: 25ch;
+  }
   .final .lead {
     margin-bottom: 2rem;
     color: rgb(255 255 255 / 75%);
   }
   @media (min-width: 48rem) {
+    .story-grid {
+      grid-template-columns: 0.6fr 1.1fr 1fr;
+    }
+    .why-grid,
+    .learning-grid {
+      grid-template-columns: repeat(2, minmax(0, 1fr));
+    }
+    .why-points {
+      grid-template-columns: repeat(3, 1fr);
+    }
     .section-heading {
       grid-template-columns: 1.5fr 1fr;
     }
@@ -370,11 +622,11 @@ const c =
   }
   @media (max-width: 40rem) {
     .hero-image {
-      opacity: 0.32;
-      background-position: 66% center;
+      opacity: 0.28;
+      background-position: 68% center;
     }
     .hero h1 {
-      font-size: clamp(2.45rem, 14vw, 4rem);
+      font-size: clamp(2.35rem, 12vw, 3.8rem);
     }
     .actions {
       align-items: stretch;

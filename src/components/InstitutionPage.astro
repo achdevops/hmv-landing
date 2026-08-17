@@ -7,46 +7,46 @@ const { locale, kind } = Astro.props as { locale: Locale; kind: Kind };
 const content = {
   capabilities: {
     es: {
-      title: 'Capacidades para experimentar con propósito',
-      lead: 'Conectamos tecnología, datos y aprendizaje para convertir preguntas sostenibles en pruebas concretas.',
+      title: 'Capacidades para investigar, medir y formar',
+      lead: 'Conectamos infraestructura digital, datos, observación de campo y aprendizaje para que la sostenibilidad forme parte de cada decisión tecnológica.',
       items: [
         [
-          'Cloud',
-          'Arquitectura estática, procesamiento, almacenamiento, automatización y observabilidad para prototipos. Seleccionamos servicios según el problema, costo, seguridad y huella operativa.',
+          'Infraestructura digital sostenible',
+          'Exploramos arquitecturas Cloud, procesamiento, almacenamiento y observabilidad para prototipos. Elegimos servicios según valor, costo, seguridad, eficiencia y huella operativa; no por tendencia.',
         ],
         [
-          'IA & datos',
-          'Exploramos visión computacional, clasificación, detección, análisis geoespacial y flujos asistidos. La revisión humana y la calidad de datos son parte del sistema.',
+          'IA & datos para sostenibilidad',
+          'Investigamos visión computacional, clasificación, análisis geoespacial y flujos asistidos. Calidad de datos, revisión humana, utilidad y costo computacional forman parte de la misma hipótesis.',
         ],
         [
-          'IoT',
-          'Integramos conceptualmente sensores, telemetría y fuentes de campo. Antes de desplegar, evaluamos conectividad, energía, mantenimiento y privacidad.',
+          'Investigación aplicada',
+          'Conectamos IoT, sensores, telemetría y fuentes de campo con preguntas verificables. Antes de desplegar, evaluamos conectividad, energía, mantenimiento, privacidad y permisos.',
         ],
         [
-          'Educación',
-          'Creamos talleres sobre GreenTech Labs, IA, Cloud, IoT y tokenización de energía renovable, sin presentarla como recomendación financiera.',
+          'Formación y cultura GreenTech',
+          'Diseñamos talleres para que equipos no especialistas comprendan la huella física de lo digital, formulen mejores preguntas y adopten criterios de medición y mejora continua.',
         ],
       ],
     },
     en: {
-      title: 'Capabilities for purpose-driven experimentation',
-      lead: 'We connect technology, data and learning to turn sustainability questions into concrete tests.',
+      title: 'Capabilities to research, measure and learn',
+      lead: 'We connect digital infrastructure, data, field observation and learning so sustainability becomes part of every technology decision.',
       items: [
         [
-          'Cloud',
-          'Static architecture, processing, storage, automation and observability for prototypes. We select services based on the problem, cost, security and operational footprint.',
+          'Sustainable digital infrastructure',
+          'We explore Cloud architectures, processing, storage and observability for prototypes. We choose services based on value, cost, security, efficiency and operational footprint—not trends.',
         ],
         [
-          'AI & data',
-          'We explore computer vision, classification, detection, geospatial analysis and assisted workflows. Human review and data quality are part of the system.',
+          'AI & data for sustainability',
+          'We research computer vision, classification, geospatial analysis and assisted workflows. Data quality, human review, usefulness and compute cost belong to the same hypothesis.',
         ],
         [
-          'IoT',
-          'We conceptually integrate sensors, telemetry and field sources. Before deployment, we evaluate connectivity, energy, maintenance and privacy.',
+          'Applied research',
+          'We connect IoT, sensors, telemetry and field sources to verifiable questions. Before deployment, we assess connectivity, energy, maintenance, privacy and permissions.',
         ],
         [
-          'Education',
-          'We create workshops on GreenTech Labs, AI, Cloud, IoT and renewable-energy tokenization, without presenting it as financial advice.',
+          'GreenTech learning and culture',
+          'We design workshops that help non-specialist teams understand the physical footprint of digital systems, ask better questions and adopt measurement and continuous-improvement criteria.',
         ],
       ],
     },
@@ -79,26 +79,46 @@ const content = {
   },
   learn: {
     es: {
-      title: 'Compartir conocimiento también genera impacto',
-      lead: 'Diseñamos talleres introductorios y conversaciones para organizaciones, comunidades educativas y equipos que quieran acercarse a GreenTech.',
+      title: 'Formación para una cultura tecnológica sostenible',
+      lead: 'Diseñamos talleres introductorios y conversaciones para que organizaciones, comunidades educativas y equipos incorporen GreenTech como una capacidad transversal.',
       items: [
-        ['GreenTech Labs', 'De una pregunta a un experimento responsable.'],
-        ['IA, Cloud e IoT', 'Fundamentos aplicados a desafíos sostenibles.'],
+        [
+          'GreenTech Labs',
+          'Cómo pasar de una inquietud ambiental a una pregunta de investigación, una hipótesis y un experimento responsable.',
+        ],
+        [
+          'Huella física de lo digital',
+          'Centros de datos, redes, energía, hardware y las decisiones que conectan arquitectura con impacto.',
+        ],
+        [
+          'IA, Cloud e IoT responsables',
+          'Fundamentos para evaluar utilidad, datos, cómputo, mantenimiento, privacidad y costo antes de desplegar.',
+        ],
         [
           'Tokenización de energía renovable',
-          'Cultura y fundamentos; no constituye asesoramiento financiero, legal ni de inversión.',
+          'Trazabilidad, incentivos, límites y decisiones de arquitectura. Contenido cultural; no constituye asesoramiento financiero, legal ni de inversión.',
         ],
       ],
     },
     en: {
-      title: 'Sharing knowledge also creates impact',
-      lead: 'We design introductory workshops and discussions for organizations, learning communities and teams interested in GreenTech.',
+      title: 'Learning for a sustainable technology culture',
+      lead: 'We design introductory workshops and discussions that help organizations, learning communities and teams develop GreenTech as a cross-functional capability.',
       items: [
-        ['GreenTech Labs', 'From a question to a responsible experiment.'],
-        ['AI, Cloud and IoT', 'Foundations applied to sustainability challenges.'],
+        [
+          'GreenTech Labs',
+          'How to move from an environmental concern to a research question, hypothesis and responsible experiment.',
+        ],
+        [
+          'The physical footprint of digital systems',
+          'Data centers, networks, energy, hardware and the decisions connecting architecture to impact.',
+        ],
+        [
+          'Responsible AI, Cloud and IoT',
+          'Foundations for assessing usefulness, data, compute, maintenance, privacy and cost before deployment.',
+        ],
         [
           'Renewable-energy tokenization',
-          'Culture and foundations; not financial, legal or investment advice.',
+          'Traceability, incentives, limitations and architecture choices. Cultural content; not financial, legal or investment advice.',
         ],
       ],
     },
@@ -135,8 +155,8 @@ const content = {
   },
   about: {
     es: {
-      title: 'Una iniciativa familiar con vocación de laboratorio',
-      lead: 'holaMundoVerde conecta experiencia tecnológica, curiosidad y sostenibilidad. El nombre une “holaMundo”, el primer saludo con el que muchas personas aprendemos a programar, con “Verde”, la intención de orientar ese conocimiento hacia desafíos sostenibles.',
+      title: 'holaMundoVerde: código, territorio y aprendizaje',
+      lead: 'Somos una iniciativa familiar de Maldonado con vocación de laboratorio. Unimos experiencia tecnológica, curiosidad y sostenibilidad para investigar, formar capacidades y construir colaboraciones paso a paso.',
       items: [
         ['Construcción gradual', 'Una investigación, un prototipo y una colaboración a la vez.'],
         [
@@ -150,8 +170,8 @@ const content = {
       ],
     },
     en: {
-      title: 'A family-led initiative with a lab mindset',
-      lead: 'holaMundoVerde connects technology experience, curiosity and sustainability. The name brings together “helloWorld”, the first greeting many of us use when learning to code, and “Verde”, our intention to direct that knowledge toward sustainability challenges.',
+      title: 'holaMundoVerde: code, territory and learning',
+      lead: 'We are a family-led initiative from Maldonado with a lab mindset. We bring together technology experience, curiosity and sustainability to research, build capabilities and develop collaborations step by step.',
       items: [
         ['Gradual growth', 'One research question, prototype and collaboration at a time.'],
         [
@@ -223,14 +243,52 @@ const capabilityIcons = [
   '/images/icons/innovation-lab.png',
   '/images/icons/education.png',
 ];
+const heroVisual =
+  kind === 'capabilities'
+    ? {
+        src: '/images/generated/digital-infrastructure-footprint.webp',
+        alt:
+          locale === 'es'
+            ? 'Visual conceptual de infraestructura digital conectada con fuentes de energía renovable.'
+            : 'Conceptual visual of digital infrastructure connected to renewable energy sources.',
+      }
+    : kind === 'learn'
+      ? {
+          src: '/images/generated/learning-workshops.webp',
+          alt:
+            locale === 'es'
+              ? 'Grupo pequeño explorando un sensor ambiental y un módulo solar en un taller.'
+              : 'Small group exploring an environmental sensor and a solar module in a workshop.',
+        }
+      : kind === 'about'
+        ? {
+            src: '/images/generated/about-maldonado-lab.webp',
+            alt:
+              locale === 'es'
+                ? 'Personas trabajando con sensores y un mapa costero en una mesa de laboratorio.'
+                : 'People working with sensors and a coastal map at a laboratory table.',
+          }
+        : undefined;
 ---
 
 <BaseLayout {locale} {title} {description} {routeKey} {alternate}>
   <header class="page-hero">
-    <div class="container">
-      <p class="eyebrow">
-        holaMundoVerde · {kind === 'privacy' ? (locale === 'es' ? 'Aviso' : 'Notice') : kind}
-      </p><h1>{c.title}</h1><p class="lead">{c.lead}</p>
+    <div class:list={['container', 'page-hero-grid', { 'page-hero-grid--visual': heroVisual }]}>
+      <div>
+        <p class="eyebrow">
+          holaMundoVerde · {kind === 'privacy' ? (locale === 'es' ? 'Aviso' : 'Notice') : kind}
+        </p>
+        <h1>{c.title}</h1>
+        <p class="lead">{c.lead}</p>
+      </div>
+      {
+        heroVisual && (
+          <figure>
+            <img src={heroVisual.src} alt={heroVisual.alt} width="1600" height="900" />
+            <figcaption>{locale === 'es' ? 'Imagen conceptual' : 'Conceptual image'}</figcaption>
+          </figure>
+        )
+      }
     </div>
   </header>
   <section class="section">
@@ -251,6 +309,41 @@ const capabilityIcons = [
       }
     </div>
   </section>
+  {
+    kind === 'capabilities' && (
+      <aside class="evidence-strip">
+        <div class="container grid-2">
+          <h2>
+            {locale === 'es'
+              ? 'De la intención a una práctica medible'
+              : 'From intention to measurable practice'}
+          </h2>
+          <div>
+            <p>
+              {locale === 'es'
+                ? 'La huella del software combina energía, intensidad de carbono y emisiones incorporadas del hardware. Por eso proponemos investigar antes de prometer y medir antes de compensar.'
+                : 'Software footprint combines energy, the carbon intensity of electricity and embodied hardware emissions. That is why we propose researching before making promises and measuring before offsetting.'}
+            </p>
+            <div class="source-links">
+              <a
+                href="https://greensoftware.foundation/standards/sci/"
+                target="_blank"
+                rel="noreferrer"
+              >
+                {locale === 'es'
+                  ? 'Estándar SCI · Green Software Foundation'
+                  : 'SCI standard · Green Software Foundation'}{' '}
+                ↗
+              </a>
+              <a href="https://www.iea.org/reports/energy-and-ai" target="_blank" rel="noreferrer">
+                Energy and AI · IEA ↗
+              </a>
+            </div>
+          </div>
+        </div>
+      </aside>
+    )
+  }
   {
     kind !== 'privacy' && (
       <section class="cta">
@@ -287,8 +380,32 @@ const capabilityIcons = [
     padding-block: clamp(4rem, 10vw, 8rem);
     background: linear-gradient(130deg, var(--white), var(--sand-200));
   }
+  .page-hero-grid {
+    display: grid;
+    gap: clamp(2rem, 6vw, 5rem);
+    align-items: center;
+  }
   .page-hero h1 {
     max-width: 16ch;
+  }
+  .page-hero figure {
+    overflow: hidden;
+    margin: 0;
+    border-radius: var(--radius-lg);
+    background: var(--white);
+    box-shadow: var(--shadow);
+  }
+  .page-hero figure img {
+    width: 100%;
+    aspect-ratio: 16 / 10;
+    object-fit: cover;
+  }
+  .page-hero figcaption {
+    padding: 0.7rem 1rem;
+    color: var(--slate-600);
+    font: 650 0.7rem var(--font-mono);
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
   }
   .items {
     display: grid;
@@ -324,7 +441,27 @@ const capabilityIcons = [
     margin-bottom: 1.5rem;
     color: rgb(255 255 255 / 75%);
   }
+  .evidence-strip {
+    padding-block: clamp(3.5rem, 7vw, 6rem);
+    color: var(--white);
+    background: var(--forest-800);
+  }
+  .evidence-strip p {
+    color: rgb(255 255 255 / 76%);
+  }
+  .source-links {
+    display: grid;
+    gap: 0.6rem;
+    margin-top: 1.25rem;
+  }
+  .source-links a {
+    color: var(--lime-300);
+    font-weight: 750;
+  }
   @media (min-width: 50rem) {
+    .page-hero-grid--visual {
+      grid-template-columns: 1fr 0.9fr;
+    }
     .items article {
       grid-template-columns: 0.35fr 1fr 1.5fr;
       align-items: start;

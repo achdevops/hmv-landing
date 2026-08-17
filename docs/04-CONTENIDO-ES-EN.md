@@ -22,43 +22,53 @@ Mantener IA en español y AI en inglés. Mantener Cloud e IoT como términos té
 ### ES
 
 Title: holaMundoVerde | GreenTech Innovation Lab
-Description: Laboratorio familiar de innovación GreenTech. Exploramos IA, Cloud, IoT y educación para convertir ideas en soluciones sostenibles.
+Description: Iniciativa familiar de investigación y formación GreenTech en Maldonado. Conectamos IA, infraestructura digital, IoT y sostenibilidad.
 
 ### EN
 
 Title: holaMundoVerde | GreenTech Innovation Lab
-Description: A family-led GreenTech Innovation Lab. We explore AI, Cloud, IoT and education to turn ideas into sustainable solutions.
+Description: A family-led GreenTech research and learning initiative in Maldonado, connecting AI, digital infrastructure, IoT and sustainability.
 
 ## 3. Home
 
 ### ES
 
-Eyebrow: GreenTech Innovation Lab
+Eyebrow: holaMundoVerde · GreenTech Innovation Lab
 
-H1: Exploramos ideas. Construimos prototipos. Generamos impacto.
+H1: Investigamos tecnología. Formamos capacidades. Diseñamos transiciones sostenibles.
 
-Lead: Combinamos inteligencia artificial, Cloud, IoT y educación para investigar desafíos ambientales, probar soluciones y construir alianzas con propósito.
+Lead: Somos una iniciativa familiar de investigación y formación. Conectamos IA, infraestructura digital, IoT y cultura GreenTech para que más organizaciones puedan innovar con evidencia y una visión responsable de su impacto.
 
 CTA primario: Explorar proyectos  
 CTA secundario: Colaborar con nosotros
 
-Quiénes somos:
+Nuestra perspectiva:
 
-holaMundoVerde une el “holaMundo” con el que tantas personas damos nuestros primeros pasos en código y “Verde”, nuestro compromiso con aplicar esa curiosidad a desafíos sostenibles. Es una iniciativa familiar que convierte buenas ideas en experimentos útiles.
+holaMundoVerde une “holaMundo”, el primer saludo de quienes aprendemos a programar, con “Verde”, la decisión de orientar esa curiosidad hacia desafíos sostenibles.
 
-Trabajamos por etapas, documentamos lo que aprendemos y buscamos organizaciones que quieran investigar, probar o enseñar junto a nosotros.
+Trabajamos por etapas, documentamos lo aprendido y abrimos espacio para investigar, prototipar y enseñar junto a otras organizaciones.
 
-Capacidades, intro:
+Por qué GreenTech ahora:
 
-Tecnología aplicada con un foco claro. Estas son las capacidades que hoy conectamos en nuestros proyectos y espacios de aprendizaje.
+La innovación digital también tiene una huella física. IA, Cloud y sistemas tokenizados funcionan sobre centros de datos, redes y dispositivos que consumen energía y materiales. Sumar GreenTech desde el inicio permite convertir esa realidad en una variable de diseño y decisión.
 
-Cloud: Diseñamos bases técnicas para experimentar, procesar datos y hacer crecer soluciones de forma responsable.
+Tokenizar puede aportar trazabilidad, coordinación e incentivos, pero no vuelve sostenible un sistema por sí mismo. Importan la arquitectura, la red elegida, el volumen de cómputo, la vida útil del hardware y la energía que alimenta cada servicio.
 
-IA & datos: Exploramos visión computacional, análisis y automatización para convertir datos en información útil.
+Principios: Medir · Diseñar · Formar.
 
-IoT: Conectamos sensores y fuentes de campo con sistemas de observación y análisis.
+Dato contextual: La IEA proyecta que el consumo eléctrico mundial de los centros de datos podría más que duplicarse hacia 2030. Enlazar siempre la fuente y no reutilizar la cifra sin revisar año y edición.
 
-Educación: Creamos talleres para compartir fundamentos, prácticas y nuevas preguntas sobre GreenTech.
+Áreas de trabajo, intro:
+
+Cuatro pilares para investigar y aprender. No son silos tecnológicos: son perspectivas que combinamos según la pregunta, el contexto y la evidencia disponible.
+
+Infraestructura digital sostenible: Cloud, arquitectura y observabilidad con criterios de eficiencia, seguridad, costo y huella operativa.
+
+IA & datos para sostenibilidad: Visión computacional, análisis y automatización con revisión humana y datos responsables.
+
+Investigación aplicada: IoT, sensores y prototipos para convertir preguntas del territorio en aprendizaje verificable.
+
+Formación GreenTech: Talleres para incorporar lenguaje, criterios y prácticas sostenibles en los equipos.
 
 Flagship, eyebrow: Proyecto destacado · Etapa por confirmar
 
@@ -86,48 +96,58 @@ MVP: Consolidamos lo que demostró valor y decidimos cómo avanzar.
 
 Learn:
 
-Aprender también es construir impacto.
+La sostenibilidad también se aprende.
 
-Estamos preparando talleres sobre GreenTech Labs, aplicaciones responsables de IA, Cloud e IoT, y cultura de tokenización de energías renovables.
+Preparamos talleres sobre GreenTech Labs, software e infraestructura digital responsable, aplicaciones de IA e IoT y cultura de tokenización de energías renovables.
+
+Aviso: contenido educativo y cultural. La tokenización se aborda con mirada crítica y no constituye asesoramiento financiero, legal ni de inversión.
 
 CTA Learn: Registrar interés
 
 CTA final:
 
-¿Hay un desafío que podríamos explorar juntos?
+¿Qué pilar sostenible necesita fortalecer tu organización?
 
-Cuéntanos qué problema estás observando, qué recursos puedes aportar o qué tipo de colaboración imaginas.
+Podemos explorar una pregunta de investigación, un prototipo, un espacio formativo o una colaboración concreta.
 
 CTA: Iniciar una conversación
 
 ### EN
 
-Eyebrow: GreenTech Innovation Lab
+Eyebrow: holaMundoVerde · GreenTech Innovation Lab
 
-H1: We explore ideas. We build prototypes. We create impact.
+H1: We research technology. We build capabilities. We design sustainable transitions.
 
-Lead: We combine artificial intelligence, Cloud, IoT and education to investigate environmental challenges, test solutions and build purpose-driven partnerships.
+Lead: We are a family-led research and learning initiative. We connect AI, digital infrastructure, IoT and GreenTech culture so more organizations can innovate with evidence and a responsible view of their impact.
 
 Primary CTA: Explore projects  
 Secondary CTA: Collaborate with us
 
-About us:
+Our perspective:
 
-holaMundoVerde brings together “helloWorld”, where so many of us take our first steps in code, and “Verde”, our commitment to applying that curiosity to sustainability challenges. It is a family-led initiative that turns good ideas into useful experiments.
+holaMundoVerde brings together “helloWorld”, the first greeting for many people learning to code, and “Verde”, our decision to direct that curiosity toward sustainability challenges.
 
-We work in stages, document what we learn and seek organizations willing to research, test or teach alongside us.
+We work in stages, document what we learn and create space to research, prototype and teach alongside other organizations.
 
-Capabilities intro:
+Why GreenTech now:
 
-Applied technology with a clear focus. These are the capabilities we currently connect across our projects and learning spaces.
+Digital innovation also has a physical footprint. AI, Cloud and tokenized systems run on data centers, networks and devices that consume energy and materials. Bringing GreenTech in from the start turns that reality into a design and decision variable.
 
-Cloud: We design technical foundations to experiment, process data and grow solutions responsibly.
+Tokenization can support traceability, coordination and incentives, but it does not make a system sustainable by itself. Architecture, network choice, compute volume, hardware lifespan and the energy behind each service all matter.
 
-AI & data: We explore computer vision, analytics and automation to turn data into useful information.
+Principles: Measure · Design · Learn.
 
-IoT: We connect sensors and field sources to observation and analysis systems.
+Areas of work, intro:
 
-Education: We create workshops to share foundations, practices and new questions about GreenTech.
+Four pillars for research and learning. These are not technology silos: they are perspectives we combine according to the question, context and available evidence.
+
+Sustainable digital infrastructure: Cloud, architecture and observability guided by efficiency, security, cost and operational-footprint criteria.
+
+AI & data for sustainability: Computer vision, analytics and automation with human review and responsible data practices.
+
+Applied research: IoT, sensors and prototypes that turn questions from the field into verifiable learning.
+
+GreenTech learning: Workshops that build shared language, criteria and sustainable practices across teams.
 
 Flagship eyebrow: Featured project · Stage to be confirmed
 
@@ -155,17 +175,19 @@ MVP: We consolidate what demonstrated value and decide how to move forward.
 
 Learn:
 
-Learning also creates impact.
+Sustainability is also something we learn.
 
-We are preparing workshops on GreenTech Labs, responsible applications of AI, Cloud and IoT, and renewable-energy tokenization culture.
+We are preparing workshops on GreenTech Labs, responsible software and digital infrastructure, applied AI and IoT, and renewable-energy tokenization culture.
+
+Notice: educational and cultural content. Tokenization is approached critically and does not constitute financial, legal or investment advice.
 
 Learn CTA: Register interest
 
 Final CTA:
 
-Is there a challenge we could explore together?
+Which sustainability capability does your organization need to strengthen?
 
-Tell us what problem you are observing, what resources you can contribute or what kind of collaboration you have in mind.
+We can explore a research question, a prototype, a learning space or a concrete collaboration.
 
 CTA: Start a conversation
 
@@ -173,31 +195,31 @@ CTA: Start a conversation
 
 ### ES
 
-H1: Capacidades para experimentar con propósito
+H1: Capacidades para investigar, medir y formar
 
-Lead: Conectamos tecnología, datos y aprendizaje para convertir preguntas sostenibles en pruebas concretas.
+Lead: Conectamos infraestructura digital, datos, observación de campo y aprendizaje para que la sostenibilidad forme parte de cada decisión tecnológica.
 
-Cloud: Arquitectura estática, procesamiento, almacenamiento, automatización y observabilidad para prototipos. Seleccionamos servicios según el problema, costo, seguridad y huella operativa.
+Infraestructura digital sostenible: Exploramos arquitecturas Cloud, procesamiento, almacenamiento y observabilidad para prototipos. Elegimos servicios según valor, costo, seguridad, eficiencia y huella operativa; no por tendencia.
 
-IA & datos: Exploración de visión computacional, clasificación, detección, análisis geoespacial y flujos asistidos. La revisión humana y la calidad de datos son parte del sistema.
+IA & datos para sostenibilidad: Investigamos visión computacional, clasificación, análisis geoespacial y flujos asistidos. Calidad de datos, revisión humana, utilidad y costo computacional forman parte de la misma hipótesis.
 
-IoT: Integración conceptual de sensores, telemetría y fuentes de campo. Antes de desplegar, evaluamos conectividad, energía, mantenimiento y privacidad.
+Investigación aplicada: Conectamos IoT, sensores, telemetría y fuentes de campo con preguntas verificables. Antes de desplegar, evaluamos conectividad, energía, mantenimiento, privacidad y permisos.
 
-Educación: Talleres y espacios de transferencia sobre GreenTech Labs, IA, Cloud, IoT y tokenización de energía renovable, sin presentarla como recomendación financiera.
+Formación y cultura GreenTech: Diseñamos talleres para que equipos no especialistas comprendan la huella física de lo digital, formulen mejores preguntas y adopten criterios de medición y mejora continua.
 
 ### EN
 
-H1: Capabilities for purpose-driven experimentation
+H1: Capabilities to research, measure and learn
 
-Lead: We connect technology, data and learning to turn sustainability questions into concrete tests.
+Lead: We connect digital infrastructure, data, field observation and learning so sustainability becomes part of every technology decision.
 
-Cloud: Static architecture, processing, storage, automation and observability for prototypes. We select services based on the problem, cost, security and operational footprint.
+Sustainable digital infrastructure: We explore Cloud architectures, processing, storage and observability for prototypes. We choose services based on value, cost, security, efficiency and operational footprint—not trends.
 
-AI & data: Exploration of computer vision, classification, detection, geospatial analysis and assisted workflows. Human review and data quality are part of the system.
+AI & data for sustainability: We research computer vision, classification, geospatial analysis and assisted workflows. Data quality, human review, usefulness and compute cost belong to the same hypothesis.
 
-IoT: Conceptual integration of sensors, telemetry and field sources. Before deployment, we evaluate connectivity, energy, maintenance and privacy.
+Applied research: We connect IoT, sensors, telemetry and field sources to verifiable questions. Before deployment, we assess connectivity, energy, maintenance, privacy and permissions.
 
-Education: Workshops and knowledge-sharing spaces covering GreenTech Labs, AI, Cloud, IoT and renewable-energy tokenization, without presenting it as financial advice.
+GreenTech learning and culture: We design workshops that help non-specialist teams understand the physical footprint of digital systems, ask better questions and adopt measurement and continuous-improvement criteria.
 
 ## 5. Lab
 
@@ -221,9 +243,9 @@ Principles: Real problems. Visible stages. Responsible data. Open collaboration.
 
 ### ES
 
-H1: Compartir conocimiento también genera impacto
+H1: Formación para una cultura tecnológica sostenible
 
-Lead: Diseñamos talleres introductorios y espacios de conversación para organizaciones, comunidades educativas y equipos que quieran acercarse a GreenTech.
+Lead: Diseñamos talleres introductorios y conversaciones para que organizaciones, comunidades educativas y equipos incorporen GreenTech como una capacidad transversal.
 
 Estado: Interés abierto · Fechas por confirmar
 
@@ -231,9 +253,9 @@ Aviso tokenización: Contenido educativo y cultural. No constituye asesoramiento
 
 ### EN
 
-H1: Sharing knowledge also creates impact
+H1: Learning for a sustainable technology culture
 
-Lead: We design introductory workshops and discussion spaces for organizations, learning communities and teams interested in GreenTech.
+Lead: We design introductory workshops and discussions that help organizations, learning communities and teams develop GreenTech as a cross-functional capability.
 
 Status: Interest open · Dates to be confirmed
 
@@ -275,7 +297,7 @@ Options: Propose a pilot site · Share data · Research · Contribute Cloud or e
 
 ### ES
 
-H1: Una iniciativa familiar con vocación de laboratorio
+H1: holaMundoVerde: código, territorio y aprendizaje
 
 holaMundoVerde conecta experiencia tecnológica, curiosidad y sostenibilidad. El nombre une “holaMundo”, el primer saludo con el que muchas personas aprendemos a programar, con “Verde”, la intención de orientar ese conocimiento hacia desafíos sostenibles. Construimos la iniciativa de manera gradual: una investigación, un prototipo y una colaboración a la vez.
 
@@ -283,7 +305,7 @@ Por ahora presentamos una identidad institucional y mantenemos abierto un punto 
 
 ### EN
 
-H1: A family-led initiative with a lab mindset
+H1: holaMundoVerde: code, territory and learning
 
 holaMundoVerde connects technology experience, curiosity and sustainability. The name brings together “helloWorld”, the first greeting many of us use when learning to code, and “Verde”, our intention to direct that knowledge toward sustainability challenges. We are building the initiative gradually: one research question, prototype and collaboration at a time.
 

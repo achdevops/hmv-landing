@@ -21,7 +21,8 @@ Carpeta de originales generados y referencias visuales. Los archivos dentro de m
 | 02 | 02-project-coast-hero.png | P0 | Hero y card del proyecto costero | ImageGen raster | generado · revisión pendiente |
 | 03 | 03-learning-workshops.png | P1 | Sección Learn | ImageGen raster | generado · revisión pendiente |
 | 04 | 04-about-maldonado-lab.png | P1 | About/CTA institucional | ImageGen raster | generado · revisión pendiente |
-| 05 | 05-sports-private-abstract.png | P2 | Teaser deportivo, solo con aprobación PI | ImageGen abstracto | bloqueado por PI |
+| 05 | 05-digital-infrastructure-footprint-v1.png | P1 | Sección “Por qué GreenTech ahora” | ImageGen raster | generado · integrado |
+| 06 | 06-sports-private-abstract.png | P2 | Teaser deportivo, solo con aprobación PI | ImageGen abstracto | bloqueado por PI |
 | 06 | og-home-es.png | P1 | Preview social Home ES | Composición HTML/SVG + export | pendiente |
 | 07 | og-home-en.png | P1 | Preview social Home EN | Composición HTML/SVG + export | pendiente |
 | 08 | og-coast-es.png | P1 | Preview social Coast ES | Composición HTML/SVG + export | pendiente |
@@ -105,7 +106,19 @@ Constraints: sin texto legible, sin logos, sin marcas de agua, sin personas iden
 Avoid: apretón de manos, poses corporativas, laboratorio científico de bata blanca, oficina lujosa, familia posando, estética publicitaria, exceso de decoración ecológica
 ~~~
 
-## 05 — Sports private
+## 05 — Infraestructura digital y huella
+
+Generado el 2026-08-17. Derivado optimizado: `public/images/generated/digital-infrastructure-footprint.webp`.
+
+Prompt de producción:
+
+~~~text
+Create one wide editorial hero photograph for the website of holaMundoVerde, a small family-led GreenTech Innovation Lab in Maldonado, Uruguay. Subject: the physical footprint behind digital systems—an elegant compact data-center aisle seen through glass, with visible efficient cooling infrastructure, subtly connected in the same landscape to wind turbines and solar panels; a restrained layer of fine data nodes and transparent ledger-like blocks suggests AI, cloud workloads and tokenized traceability. The image must communicate research, measurement, energy awareness and organizational learning, not crypto speculation. Authentic contemporary documentary/editorial photography with a slightly conceptual overlay, calm daylight, sophisticated forest green, ocean teal, warm sand and small lime accents matching a premium sustainability-tech brand. Composition: 16:9, main visual weight on the right and lower center, quieter darker/neutral negative space on the left for website text. No people, no logos, no letters, no numbers, no readable dashboards, no coins, no cryptocurrency symbols, no neon cyberpunk, no glowing globe, no generic leaf icon, no excessive futuristic effects. High realism, subtle depth, restrained contrast, consistent with an existing coastal GreenTech website.
+~~~
+
+Uso: pieza editorial conceptual para explicar que toda infraestructura digital tiene componentes físicos y energéticos. No representa instalaciones propias ni una alianza con operadores de centros de datos.
+
+## 06 — Sports private
 
 No generar hasta aprobación de PI. Si se aprueba, usar geometría abstracta sobre reconocimiento y logro; no mostrar deporte, flujo, premio, token, app, interfaz ni mecanismo.
 

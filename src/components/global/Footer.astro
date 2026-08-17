@@ -10,20 +10,21 @@ const { locale } = Astro.props;
   <div class="container footer-grid">
     <div>
       <div class="footer-lockup">
-        <img src="/images/brand/hmv-isotype.png" alt="" width="256" height="242" /><p
-          class="footer-brand"
-        >
-          holaMundoVerde
-        </p>
-      </div><p>
+        <img src="/images/brand/hmv-isotype.png" alt="" width="256" height="242" />
+        <div>
+          <p class="footer-brand">holaMundo<span>Verde</span></p>
+          <p class="footer-descriptor">GreenTech Innovation Lab</p>
+        </div>
+      </div>
+      <p>
         {locale === 'es' ? 'Ubicación: Maldonado, Uruguay' : 'Location: Maldonado, Uruguay'}
       </p>
     </div>
     <p>
       {
         locale === 'es'
-          ? 'Exploramos ideas, construimos prototipos y aprendemos en colaboración.'
-          : 'We explore ideas, build prototypes and learn through collaboration.'
+          ? 'Investigamos tecnología, formamos capacidades y aprendemos en colaboración.'
+          : 'We research technology, build capabilities and learn through collaboration.'
       }
     </p>
     <nav aria-label={locale === 'es' ? 'Pie de página' : 'Footer'}>
@@ -48,6 +49,14 @@ const { locale } = Astro.props;
   }
   .footer-brand {
     font: 700 1.2rem var(--font-display);
+  }
+  .footer-brand span {
+    color: var(--lime-300);
+  }
+  .footer-descriptor {
+    margin-top: 0.2rem;
+    font: 650 0.66rem/1.3 var(--font-mono);
+    letter-spacing: 0.035em;
   }
   .footer-lockup {
     display: flex;

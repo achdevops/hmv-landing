@@ -22,9 +22,11 @@ const items: { key: RouteKey; label: string }[] = [
 <header class="site-header">
   <div class="header-inner">
     <a class="brand" href={route('home', locale)} aria-label={`holaMundoVerde — ${t.home}`}>
-      <img src="/images/brand/hmv-isotype.png" alt="" width="256" height="242" /><span
-        >holaMundo<strong>Verde</strong></span
-      >
+      <img src="/images/brand/hmv-isotype.png" alt="" width="256" height="242" />
+      <span class="brand-copy">
+        <span class="brand-name">holaMundo<strong>Verde</strong></span>
+        <span class="brand-descriptor">GreenTech Innovation Lab</span>
+      </span>
     </a>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav"
       ><span>{t.menu}</span><i aria-hidden="true"></i></button
@@ -90,12 +92,24 @@ const items: { key: RouteKey; label: string }[] = [
     align-items: center;
     gap: 0.7rem;
     color: var(--ink-900);
-    font: 700 1rem/1 var(--font-display);
-    letter-spacing: -0.02em;
     text-decoration: none;
+  }
+  .brand-copy {
+    display: grid;
+    gap: 0.25rem;
+  }
+  .brand-name {
+    color: var(--ink-900);
+    font: 750 1rem/1 var(--font-display);
+    letter-spacing: -0.03em;
   }
   .brand strong {
     color: var(--forest-700);
+  }
+  .brand-descriptor {
+    color: var(--slate-600);
+    font: 650 0.58rem/1 var(--font-mono);
+    letter-spacing: 0.035em;
   }
   .brand img {
     width: 2.7rem;
@@ -181,6 +195,9 @@ const items: { key: RouteKey; label: string }[] = [
     }
   }
   @media (max-width: 25rem) {
+    .brand-descriptor {
+      display: none;
+    }
     nav[data-open='true'] {
       grid-template-columns: 1fr;
     }
