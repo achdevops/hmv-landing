@@ -1,4 +1,4 @@
-# Hola Mundo Verde 2.0 — paquete de definición del MVP
+# holaMundoVerde 2.0 — paquete de definición del MVP
 
 Versión: 1.0  
 Fecha base: 2026-08-17  
@@ -8,7 +8,7 @@ Este paquete convierte las decisiones de la conversación de descubrimiento en u
 
 ## Resultado que se busca
 
-Un sitio profesional, bilingüe, rápido y ampliable que presente a Hola Mundo Verde (HMV) como un GreenTech Innovation Lab familiar; demuestre trabajo real mediante proyectos; facilite alianzas, pilotos y talleres; y evite publicar información que comprometa propiedad intelectual.
+Un sitio profesional, bilingüe, rápido y ampliable que presente a holaMundoVerde (HMV) como un GreenTech Innovation Lab familiar; demuestre trabajo real mediante proyectos; facilite alianzas, pilotos y talleres; y evite publicar información que comprometa propiedad intelectual.
 
 ## Orden recomendado de lectura
 

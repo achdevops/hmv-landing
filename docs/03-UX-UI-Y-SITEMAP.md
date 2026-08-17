@@ -59,7 +59,7 @@ Objetivo: explicar HMV en cinco segundos.
 
 Contenido:
 
-- eyebrow: GreenTech Innovation Lab · Maldonado, Uruguay;
+- eyebrow: GreenTech Innovation Lab;
 - titular de acción;
 - propuesta de valor;
 - CTA “Explorar proyectos”;
@@ -291,5 +291,4 @@ Estados:
 - no hay modales promocionales;
 - el formulario preserva los valores tras un error recuperable;
 - el éxito no promete tiempo de respuesta no acordado.
-
 

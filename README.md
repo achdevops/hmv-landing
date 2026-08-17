@@ -1,6 +1,6 @@
-# Hola Mundo Verde 2.0
+# holaMundoVerde 2.0
 
-Sitio bilingüe ES/EN de Hola Mundo Verde, un GreenTech Innovation Lab familiar de Maldonado, Uruguay. El frontend es Astro estático y el formulario usa un Cloudflare Worker independiente. El contrato de producto está en [docs/README.md](docs/README.md).
+Sitio bilingüe ES/EN de holaMundoVerde, un GreenTech Innovation Lab familiar. El frontend es Astro estático y el formulario usa un Cloudflare Worker independiente. El contrato de producto está en [docs/README.md](docs/README.md).
 
 ## Requisitos y desarrollo
 

@@ -9,8 +9,14 @@ const { locale } = Astro.props;
 <footer>
   <div class="container footer-grid">
     <div>
-      <p class="footer-brand">Hola Mundo Verde</p><p>
-        GreenTech Innovation Lab · Maldonado, Uruguay
+      <div class="footer-lockup">
+        <img src="/images/brand/hmv-isotype.png" alt="" width="256" height="242" /><p
+          class="footer-brand"
+        >
+          holaMundoVerde
+        </p>
+      </div><p>
+        {locale === 'es' ? 'Ubicación: Maldonado, Uruguay' : 'Location: Maldonado, Uruguay'}
       </p>
     </div>
     <p>
@@ -41,8 +47,17 @@ const { locale } = Astro.props;
     gap: 2.5rem;
   }
   .footer-brand {
-    margin-bottom: 0.3rem;
     font: 700 1.2rem var(--font-display);
+  }
+  .footer-lockup {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 0.5rem;
+  }
+  .footer-lockup img {
+    width: 3rem;
+    height: auto;
   }
   footer p {
     color: rgb(255 255 255 / 78%);

@@ -157,7 +157,7 @@ Resultado objetivo: un proyecto IA+Cloud desplegado en contexto validado, sin pr
 - [ ] No hay Lorem ipsum, TODO, [pendiente] ni afirmaciones no aprobadas.
 - [ ] Español e inglés transmiten el mismo alcance.
 - [ ] “familiar” no implica sociedad registrada.
-- [ ] La ubicación pública es Maldonado, Uruguay.
+- [ ] La ubicación pública “Maldonado, Uruguay” aparece únicamente en el footer.
 - [ ] No hay nombres/fotos del equipo.
 - [ ] Capacidades activas: Cloud, IA/Data, IoT, Education.
 - [ ] Proyecto costero está en etapa respaldada.
@@ -264,4 +264,3 @@ Primer mes:
 
 - revisar consultas, lenguaje, abandono y primer contenido de progreso;
 - fijar metas numéricas con línea base.
-

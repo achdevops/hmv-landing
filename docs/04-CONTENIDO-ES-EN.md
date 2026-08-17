@@ -21,19 +21,19 @@ Mantener IA en español y AI en inglés. Mantener Cloud e IoT como términos té
 
 ### ES
 
-Title: Hola Mundo Verde | GreenTech Innovation Lab  
-Description: Laboratorio familiar de innovación GreenTech en Maldonado, Uruguay. Exploramos IA, Cloud, IoT y educación para convertir ideas en soluciones sostenibles.
+Title: holaMundoVerde | GreenTech Innovation Lab
+Description: Laboratorio familiar de innovación GreenTech. Exploramos IA, Cloud, IoT y educación para convertir ideas en soluciones sostenibles.
 
 ### EN
 
-Title: Hola Mundo Verde | GreenTech Innovation Lab  
-Description: A family-led GreenTech Innovation Lab in Maldonado, Uruguay. We explore AI, Cloud, IoT and education to turn ideas into sustainable solutions.
+Title: holaMundoVerde | GreenTech Innovation Lab
+Description: A family-led GreenTech Innovation Lab. We explore AI, Cloud, IoT and education to turn ideas into sustainable solutions.
 
 ## 3. Home
 
 ### ES
 
-Eyebrow: GreenTech Innovation Lab · Maldonado, Uruguay
+Eyebrow: GreenTech Innovation Lab
 
 H1: Exploramos ideas. Construimos prototipos. Generamos impacto.
 
@@ -44,7 +44,7 @@ CTA secundario: Colaborar con nosotros
 
 Quiénes somos:
 
-Hola Mundo Verde es una iniciativa familiar que crece alrededor de una convicción: la tecnología puede ayudarnos a comprender mejor los desafíos sostenibles y convertir buenas ideas en experimentos útiles.
+holaMundoVerde une el “holaMundo” con el que tantas personas damos nuestros primeros pasos en código y “Verde”, nuestro compromiso con aplicar esa curiosidad a desafíos sostenibles. Es una iniciativa familiar que convierte buenas ideas en experimentos útiles.
 
 Trabajamos por etapas, documentamos lo que aprendemos y buscamos organizaciones que quieran investigar, probar o enseñar junto a nosotros.
 
@@ -102,7 +102,7 @@ CTA: Iniciar una conversación
 
 ### EN
 
-Eyebrow: GreenTech Innovation Lab · Maldonado, Uruguay
+Eyebrow: GreenTech Innovation Lab
 
 H1: We explore ideas. We build prototypes. We create impact.
 
@@ -113,7 +113,7 @@ Secondary CTA: Collaborate with us
 
 About us:
 
-Hola Mundo Verde is a family-led initiative growing around one conviction: technology can help us understand sustainability challenges and turn good ideas into useful experiments.
+holaMundoVerde brings together “helloWorld”, where so many of us take our first steps in code, and “Verde”, our commitment to applying that curiosity to sustainability challenges. It is a family-led initiative that turns good ideas into useful experiments.
 
 We work in stages, document what we learn and seek organizations willing to research, test or teach alongside us.
 
@@ -277,7 +277,7 @@ Options: Propose a pilot site · Share data · Research · Contribute Cloud or e
 
 H1: Una iniciativa familiar con vocación de laboratorio
 
-Hola Mundo Verde nace en Maldonado, Uruguay, como un espacio familiar para conectar experiencia tecnológica, curiosidad y sostenibilidad. Estamos construyendo la iniciativa de manera gradual: una investigación, un prototipo y una colaboración a la vez.
+holaMundoVerde conecta experiencia tecnológica, curiosidad y sostenibilidad. El nombre une “holaMundo”, el primer saludo con el que muchas personas aprendemos a programar, con “Verde”, la intención de orientar ese conocimiento hacia desafíos sostenibles. Construimos la iniciativa de manera gradual: una investigación, un prototipo y una colaboración a la vez.
 
 Por ahora presentamos una identidad institucional y mantenemos abierto un punto de contacto común.
 
@@ -285,7 +285,7 @@ Por ahora presentamos una identidad institucional y mantenemos abierto un punto 
 
 H1: A family-led initiative with a lab mindset
 
-Hola Mundo Verde began in Maldonado, Uruguay, as a family space connecting technology experience, curiosity and sustainability. We are building the initiative gradually: one research question, prototype and collaboration at a time.
+holaMundoVerde connects technology experience, curiosity and sustainability. The name brings together “helloWorld”, the first greeting many of us use when learning to code, and “Verde”, our intention to direct that knowledge toward sustainability challenges. We are building the initiative gradually: one research question, prototype and collaboration at a time.
 
 For now, we present an institutional identity and maintain one shared point of contact.
 
@@ -297,7 +297,7 @@ H1: Cuéntanos qué quieres explorar
 
 Lead: Comparte el contexto suficiente para entender la conversación. No envíes información confidencial, secretos comerciales, credenciales ni datos personales sensibles.
 
-Consentimiento: Acepto que Hola Mundo Verde utilice estos datos para responder a mi consulta, de acuerdo con la política de privacidad.
+Consentimiento: Acepto que holaMundoVerde utilice estos datos para responder a mi consulta, de acuerdo con la política de privacidad.
 
 Éxito: Gracias. Recibimos tu mensaje. Conserva este identificador si necesitas consultar el envío: {referenceId}.
 
@@ -309,7 +309,7 @@ H1: Tell us what you want to explore
 
 Lead: Share enough context for us to understand the conversation. Do not send confidential information, trade secrets, credentials or sensitive personal data.
 
-Consent: I agree that Hola Mundo Verde may use this data to respond to my inquiry, according to the privacy notice.
+Consent: I agree that holaMundoVerde may use this data to respond to my inquiry, according to the privacy notice.
 
 Success: Thank you. We received your message. Keep this reference if you need to ask about the submission: {referenceId}.
 
@@ -341,5 +341,3 @@ Privacy · Contact · Español · English
 | active | Activo | Active |
 | completed | Finalizado | Completed |
 | private | Exploración reservada | Private exploration |
-
-

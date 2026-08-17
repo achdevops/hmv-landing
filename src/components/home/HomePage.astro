@@ -8,12 +8,12 @@ const projects = (await getCollection('projects')).sort((a, b) => a.data.order -
 const c =
   locale === 'es'
     ? {
-        eyebrow: 'GreenTech Innovation Lab · Maldonado, Uruguay',
+        eyebrow: 'GreenTech Innovation Lab',
         h1: 'Exploramos ideas. Construimos prototipos. Generamos impacto.',
         lead: 'Combinamos inteligencia artificial, Cloud, IoT y educación para investigar desafíos ambientales, probar soluciones y construir alianzas con propósito.',
         aboutTitle: 'Una iniciativa familiar con método de laboratorio',
         about:
-          'Hola Mundo Verde crece alrededor de una convicción: la tecnología puede ayudarnos a comprender desafíos sostenibles y convertir buenas ideas en experimentos útiles. Trabajamos por etapas, documentamos lo aprendido y buscamos organizaciones que quieran investigar, probar o enseñar junto a nosotros.',
+          'holaMundoVerde une el “holaMundo” con el que tantas personas damos nuestros primeros pasos en código y “Verde”, nuestro compromiso con aplicar esa curiosidad a desafíos sostenibles. Crecemos como una iniciativa familiar: trabajamos por etapas, documentamos lo aprendido y buscamos organizaciones que quieran investigar, probar o enseñar junto a nosotros.',
         capsTitle: 'Tecnología aplicada con un foco claro',
         capsLead:
           'Estas son las capacidades que hoy conectamos en proyectos y espacios de aprendizaje.',
@@ -21,15 +21,22 @@ const c =
           [
             'Cloud',
             'Bases técnicas para experimentar, procesar datos y hacer crecer soluciones de forma responsable.',
+            '/images/icons/green-solutions.png',
           ],
           [
             'IA & datos',
             'Visión computacional, análisis y automatización para convertir datos en información útil.',
+            '/images/icons/ai-for-green.png',
           ],
-          ['IoT', 'Sensores y fuentes de campo conectados con sistemas de observación y análisis.'],
+          [
+            'IoT',
+            'Sensores y fuentes de campo conectados con sistemas de observación y análisis.',
+            '/images/icons/innovation-lab.png',
+          ],
           [
             'Educación',
             'Talleres para compartir fundamentos, prácticas y nuevas preguntas sobre GreenTech.',
+            '/images/icons/education.png',
           ],
         ],
         work: 'Lo que estamos explorando',
@@ -48,12 +55,12 @@ const c =
           'Cuéntanos qué problema observas, qué recursos puedes aportar o qué colaboración imaginas.',
       }
     : {
-        eyebrow: 'GreenTech Innovation Lab · Maldonado, Uruguay',
+        eyebrow: 'GreenTech Innovation Lab',
         h1: 'We explore ideas. We build prototypes. We create impact.',
         lead: 'We combine artificial intelligence, Cloud, IoT and education to investigate environmental challenges, test solutions and build purpose-driven partnerships.',
         aboutTitle: 'A family-led initiative with a lab method',
         about:
-          'Hola Mundo Verde grows around one conviction: technology can help us understand sustainability challenges and turn good ideas into useful experiments. We work in stages, document what we learn and seek organizations willing to research, test or teach alongside us.',
+          'holaMundoVerde brings together “helloWorld”, where so many of us take our first steps in code, and “Verde”, our commitment to applying that curiosity to sustainability challenges. We grow as a family-led initiative: working in stages, documenting what we learn and seeking organizations willing to research, test or teach alongside us.',
         capsTitle: 'Applied technology with a clear focus',
         capsLead:
           'These are the capabilities we currently connect across projects and learning spaces.',
@@ -61,15 +68,22 @@ const c =
           [
             'Cloud',
             'Technical foundations to experiment, process data and grow solutions responsibly.',
+            '/images/icons/green-solutions.png',
           ],
           [
             'AI & data',
             'Computer vision, analytics and automation to turn data into useful information.',
+            '/images/icons/ai-for-green.png',
           ],
-          ['IoT', 'Sensors and field sources connected to observation and analysis systems.'],
+          [
+            'IoT',
+            'Sensors and field sources connected to observation and analysis systems.',
+            '/images/icons/innovation-lab.png',
+          ],
           [
             'Education',
             'Workshops sharing foundations, practices and new questions about GreenTech.',
+            '/images/icons/education.png',
           ],
         ],
         work: 'What we are exploring',
@@ -121,10 +135,15 @@ const c =
       </div><p>{c.capsLead}</p>
     </div><div class="cap-grid">
       {
-        c.caps.map(([title, text], i) => (
+        c.caps.map(([title, text, icon], i) => (
           <article>
             <>
-              <span>0{i + 1}</span>
+              <div class="cap-meta">
+                <>
+                  <span>0{i + 1}</span>
+                  <img src={icon} alt="" width="256" height="256" />
+                </>
+              </div>
               <h3>{title}</h3>
               <p>{text}</p>
             </>
@@ -251,6 +270,15 @@ const c =
   }
   .cap-grid span {
     color: var(--forest-700);
+  }
+  .cap-meta {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+  }
+  .cap-meta img {
+    width: 4rem;
+    height: 4rem;
   }
   .method li > span {
     color: var(--lime-300);

@@ -136,7 +136,7 @@ const content = {
   about: {
     es: {
       title: 'Una iniciativa familiar con vocación de laboratorio',
-      lead: 'Hola Mundo Verde nace en Maldonado, Uruguay, para conectar experiencia tecnológica, curiosidad y sostenibilidad.',
+      lead: 'holaMundoVerde conecta experiencia tecnológica, curiosidad y sostenibilidad. El nombre une “holaMundo”, el primer saludo con el que muchas personas aprendemos a programar, con “Verde”, la intención de orientar ese conocimiento hacia desafíos sostenibles.',
       items: [
         ['Construcción gradual', 'Una investigación, un prototipo y una colaboración a la vez.'],
         [
@@ -151,7 +151,7 @@ const content = {
     },
     en: {
       title: 'A family-led initiative with a lab mindset',
-      lead: 'Hola Mundo Verde began in Maldonado, Uruguay, to connect technology experience, curiosity and sustainability.',
+      lead: 'holaMundoVerde connects technology experience, curiosity and sustainability. The name brings together “helloWorld”, the first greeting many of us use when learning to code, and “Verde”, our intention to direct that knowledge toward sustainability challenges.',
       items: [
         ['Gradual growth', 'One research question, prototype and collaboration at a time.'],
         [
@@ -214,16 +214,22 @@ const content = {
 } as const;
 const c = content[kind][locale];
 const routeKey = kind as RouteKey;
-const title = `${c.title} | Hola Mundo Verde`;
+const title = `${c.title} | holaMundoVerde`;
 const description = c.lead;
 const alternate = route(kind as RouteKey, locale === 'es' ? 'en' : 'es');
+const capabilityIcons = [
+  '/images/icons/green-solutions.png',
+  '/images/icons/ai-for-green.png',
+  '/images/icons/innovation-lab.png',
+  '/images/icons/education.png',
+];
 ---
 
 <BaseLayout {locale} {title} {description} {routeKey} {alternate}>
   <header class="page-hero">
     <div class="container">
       <p class="eyebrow">
-        Hola Mundo Verde · {kind === 'privacy' ? (locale === 'es' ? 'Aviso' : 'Notice') : kind}
+        holaMundoVerde · {kind === 'privacy' ? (locale === 'es' ? 'Aviso' : 'Notice') : kind}
       </p><h1>{c.title}</h1><p class="lead">{c.lead}</p>
     </div>
   </header>
@@ -234,6 +240,9 @@ const alternate = route(kind as RouteKey, locale === 'es' ? 'en' : 'es');
           <article>
             <>
               <span>0{i + 1}</span>
+              {kind === 'capabilities' && (
+                <img src={capabilityIcons[i]} alt="" width="256" height="256" />
+              )}
               <h2>{heading}</h2>
               <p>{body}</p>
             </>
@@ -299,6 +308,10 @@ const alternate = route(kind as RouteKey, locale === 'es' ? 'en' : 'es');
   .items h2 {
     font-size: clamp(1.4rem, 2.5vw, 2rem);
   }
+  .items img {
+    width: 4rem;
+    height: 4rem;
+  }
   .items p {
     color: var(--slate-600);
   }
@@ -315,6 +328,9 @@ const alternate = route(kind as RouteKey, locale === 'es' ? 'en' : 'es');
     .items article {
       grid-template-columns: 0.35fr 1fr 1.5fr;
       align-items: start;
+    }
+    .items article:has(img) {
+      grid-template-columns: 0.2fr 0.35fr 0.8fr 1.5fr;
     }
     .items--method {
       grid-template-columns: repeat(2, 1fr);

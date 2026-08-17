@@ -2,9 +2,9 @@
 
 ## Resumen ejecutivo
 
-Hola Mundo Verde 2.0 será la presencia digital de una iniciativa familiar de Maldonado, Uruguay, que gana fuerza de forma gradual. No se presentará como una gran empresa, ONG, incubadora formal ni consultora de capacidades ilimitadas. Se posicionará con honestidad como:
+holaMundoVerde 2.0 será la presencia digital de una iniciativa familiar de Maldonado, Uruguay, que gana fuerza de forma gradual. No se presentará como una gran empresa, ONG, incubadora formal ni consultora de capacidades ilimitadas. Se posicionará con honestidad como:
 
-> Hola Mundo Verde — GreenTech Innovation Lab
+> holaMundoVerde — GreenTech Innovation Lab
 
 Propuesta de valor:
 

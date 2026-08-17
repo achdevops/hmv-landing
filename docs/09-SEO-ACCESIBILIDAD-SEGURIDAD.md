@@ -35,11 +35,11 @@ No indexar:
 
 Usar Organization solo con información verificada:
 
-- name: Hola Mundo Verde;
+- name: holaMundoVerde;
 - url;
 - logo;
 - email institucional;
-- areaServed o addressLocality: Maldonado;
+- no publicar ubicación estructurada; la ubicación visible se limita al footer;
 - sameAs solo para perfiles oficiales existentes.
 
 No declarar:
@@ -231,4 +231,3 @@ La política final debe incluir fecha, responsable, contacto, campos recogidos, 
 - CSP/Turnstile se prueban juntos;
 - robots no se usa como mecanismo de confidencialidad;
 - el formulario no registra PII en herramientas de analítica.
-

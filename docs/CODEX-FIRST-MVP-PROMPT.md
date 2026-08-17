@@ -12,7 +12,7 @@ El objetivo es obtener primero un sitio estático completo y revisable. La integ
 
 ## Inicio del prompt
 
-Trabaja en este repositorio y construye el MVP 0.1 navegable de Hola Mundo Verde 2.0.
+Trabaja en este repositorio y construye el MVP 0.1 navegable de holaMundoVerde 2.0.
 
 ### Objetivo de esta tarea
 
@@ -84,7 +84,7 @@ Evita:
 - logos de proveedores o partners;
 - métricas, testimonios o resultados ficticios.
 
-Hasta contar con un logo aprobado, usa un wordmark tipográfico sencillo “Hola Mundo Verde” y un símbolo CSS discreto. No inventes una marca definitiva.
+Hasta contar con un logo aprobado, usa un wordmark tipográfico sencillo “holaMundoVerde” y un símbolo CSS discreto. No inventes una marca definitiva.
 
 ### Imágenes
 

@@ -22,8 +22,8 @@ const {
   routeKey,
   alternate,
   noindex = false,
-  image = '/images/og/og-home-es.png',
-  imageAlt = 'Hola Mundo Verde — GreenTech Innovation Lab',
+  image = '/images/generated/hero-home-greentech.webp',
+  imageAlt = 'holaMundoVerde — GreenTech Innovation Lab',
 } = Astro.props;
 const canonical = new URL(Astro.url.pathname, Astro.site);
 const alternateUrl = new URL(alternate, Astro.site);
@@ -33,10 +33,9 @@ const isPreview = Astro.site?.hostname.startsWith('dev.') ?? false;
 const organization = {
   '@context': 'https://schema.org',
   '@type': 'Organization',
-  name: 'Hola Mundo Verde',
+  name: 'holaMundoVerde',
   url: Astro.site?.origin ?? 'https://dev.holamundoverde.com',
   email: 'hola@holamundoverde.com',
-  address: { '@type': 'PostalAddress', addressLocality: 'Maldonado', addressCountry: 'UY' },
 };
 ---
 
@@ -58,7 +57,7 @@ const organization = {
     {(noindex || isPreview) && <meta name="robots" content="noindex,nofollow" />}
     <meta property="og:type" content="website" /><meta
       property="og:site_name"
-      content="Hola Mundo Verde"
+      content="holaMundoVerde"
     /><meta property="og:locale" content={locale === 'es' ? 'es_UY' : 'en_US'} /><meta
       property="og:title"
       content={title}
@@ -66,9 +65,6 @@ const organization = {
       property="og:url"
       content={canonical}
     /><meta property="og:image" content={ogImage} /><meta
-      property="og:image:width"
-      content="1200"
-    /><meta property="og:image:height" content="630" /><meta
       property="og:image:alt"
       content={imageAlt}
     />

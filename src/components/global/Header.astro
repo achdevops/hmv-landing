@@ -21,9 +21,9 @@ const items: { key: RouteKey; label: string }[] = [
 
 <header class="site-header">
   <div class="header-inner">
-    <a class="brand" href={route('home', locale)} aria-label={`Hola Mundo Verde — ${t.home}`}>
-      <span class="mark" aria-hidden="true"><i></i><b></b></span><span
-        >Hola Mundo<br /><strong>Verde</strong></span
+    <a class="brand" href={route('home', locale)} aria-label={`holaMundoVerde — ${t.home}`}>
+      <img src="/images/brand/hmv-isotype.png" alt="" width="256" height="242" /><span
+        >holaMundo<strong>Verde</strong></span
       >
     </a>
     <button class="menu-button" type="button" aria-expanded="false" aria-controls="main-nav"
@@ -90,51 +90,16 @@ const items: { key: RouteKey; label: string }[] = [
     align-items: center;
     gap: 0.7rem;
     color: var(--ink-900);
-    font: 650 0.8rem/1.05 var(--font-display);
+    font: 700 1rem/1 var(--font-display);
     letter-spacing: -0.02em;
     text-decoration: none;
   }
   .brand strong {
     color: var(--forest-700);
   }
-  .mark {
-    position: relative;
-    display: grid;
-    width: 2.4rem;
-    height: 2.4rem;
-    place-items: center;
-    border: 1px solid var(--forest-700);
-    border-radius: 50%;
-  }
-  .mark::before,
-  .mark::after,
-  .mark i,
-  .mark b {
-    content: '';
-    position: absolute;
-    background: var(--forest-700);
-  }
-  .mark::before {
-    width: 1.3rem;
-    height: 1px;
-    transform: rotate(-16deg);
-  }
-  .mark::after {
-    width: 0.38rem;
-    height: 0.38rem;
-    border-radius: 50%;
-    transform: translate(0.55rem, -0.25rem);
-  }
-  .mark i {
-    width: 0.42rem;
-    height: 0.42rem;
-    border-radius: 50%;
-    transform: translate(-0.5rem, 0.22rem);
-  }
-  .mark b {
-    width: 1px;
-    height: 1.2rem;
-    transform: rotate(38deg);
+  .brand img {
+    width: 2.7rem;
+    height: auto;
   }
   nav {
     display: flex;

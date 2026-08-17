@@ -6,11 +6,11 @@ Copiar desde “Inicio del prompt” hasta “Fin del prompt” en una nueva tar
 
 ## Inicio del prompt
 
-Construye el MVP de Hola Mundo Verde 2.0 en este repositorio.
+Construye el MVP de holaMundoVerde 2.0 en este repositorio.
 
 ### Resultado
 
-Implementa un sitio bilingüe ES/EN que presente a Hola Mundo Verde como un GreenTech Innovation Lab familiar en Maldonado, Uruguay. Debe destacar capacidades reales en Cloud, IA/Data, IoT y Education; mostrar como flagship el proyecto de monitoreo costero con IA y drones; proteger estrictamente la iniciativa deportiva; facilitar colaboración y contacto; y desplegar como sitio Astro estático en GitHub Pages.
+Implementa un sitio bilingüe ES/EN que presente a holaMundoVerde como un GreenTech Innovation Lab familiar en Maldonado, Uruguay. Debe destacar capacidades reales en Cloud, IA/Data, IoT y Education; mostrar como flagship el proyecto de monitoreo costero con IA y drones; proteger estrictamente la iniciativa deportiva; facilitar colaboración y contacto; y desplegar como sitio Astro estático en GitHub Pages.
 
 ### Fuente de verdad
 

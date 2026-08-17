@@ -3,11 +3,11 @@ import BaseLayout from '@/layouts/BaseLayout.astro';
 import ContactForm from './ContactForm.astro';
 import { route, type Locale } from '@/i18n/routes';
 const { locale } = Astro.props as { locale: Locale };
-const title = locale === 'es' ? 'Contacto | Hola Mundo Verde' : 'Contact | Hola Mundo Verde';
+const title = locale === 'es' ? 'Contacto | holaMundoVerde' : 'Contact | holaMundoVerde';
 const description =
   locale === 'es'
-    ? 'Comparte un desafío, recurso o idea de colaboración con Hola Mundo Verde.'
-    : 'Share a challenge, resource or collaboration idea with Hola Mundo Verde.';
+    ? 'Comparte un desafío, recurso o idea de colaboración con holaMundoVerde.'
+    : 'Share a challenge, resource or collaboration idea with holaMundoVerde.';
 ---
 
 <BaseLayout
